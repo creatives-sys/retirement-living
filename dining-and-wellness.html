@@ -1,0 +1,1158 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/css/animate.min.css" rel="stylesheet">
+    <link href="assets/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Dining & Wellness – Green Gardens Retirement Villas</title>
+
+    <style>
+        :root {
+            --font-dmsans: "DM Sans", sans-serif;
+            --font-marcellus: "Marcellus", sans-serif;
+            --font-dancing: "Dancing Script", sans-serif;
+            --white-color: #fff;
+            --black-color: #171717;
+            --title-color: #171717;
+            --text-color: #595959;
+            --primary-color1: #BF9A72;
+            --primary-color1-opc: 191, 154, 114;
+            --primary-color2: #5CA1A4;
+            --borders-color: #E8E8E8;
+            --bg-light: #F8F6F3;
+            --bg-green-soft: #EEF5F0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-dmsans); color: var(--title-color); font-size: 16px; font-weight: 400; line-height: 30px; }
+
+        /* ============ HEADER (reused from index) ============ */
+        .header-offer-topbar-wrap { position: sticky; top: 0; z-index: 999; }
+        .offer-topbar { background: var(--black-color); padding: 8px 0; text-align: center; font-size: 13px; color: #ccc; position: relative; }
+        .offer-topbar a { color: #BF9A72; text-decoration: none; }
+        .offer-topbar-close-btn { position: absolute; right: 20px; top: 50%; transform: translateY(-50%); cursor: pointer; color: #ccc; }
+
+        header.style-1 {
+            background: #fff;
+            border-bottom: 1px solid var(--borders-color);
+            padding: 14px 30px;
+        }
+        .header-inner { display: flex; align-items: center; justify-content: space-between; max-width: 1400px; margin: 0 auto; }
+        .header-logo img { height: 55px; width: auto; }
+        .main-menu ul { list-style: none; display: flex; gap: 32px; margin: 0; padding: 0; }
+        .main-menu ul li a { font-family: var(--font-dmsans); font-size: 14px; font-weight: 500; color: var(--title-color); text-decoration: none; transition: color .25s; }
+        .main-menu ul li a:hover, .main-menu ul li.active a { color: var(--primary-color1); }
+        .main-menu ul li { position: relative; }
+        .sub-menu { display: none; position: absolute; top: 100%; left: 0; background: #fff; box-shadow: 0 8px 30px rgba(0,0,0,.1); min-width: 200px; border-top: 2px solid var(--primary-color1); padding: 10px 0; z-index: 99; }
+        .main-menu ul li:hover .sub-menu { display: block; }
+        .sub-menu li { padding: 0 !important; }
+        .sub-menu li a { display: block; padding: 8px 20px; font-size: 13px; color: var(--text-color) !important; }
+        .sub-menu li a:hover { color: var(--primary-color1) !important; background: #faf8f5; }
+        .nav-right { display: flex; align-items: center; gap: 24px; }
+        .primary-btn1 { display: inline-flex; align-items: center; gap: 6px; background: var(--primary-color1); color: #fff; padding: 10px 24px; font-size: 14px; font-weight: 500; border-radius: 2px; text-decoration: none; transition: background .25s; }
+        .primary-btn1:hover { background: #a8855e; color: #fff; }
+        .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; }
+
+        /* ============ BREADCRUMB ============ */
+        .breadcrumb-section {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2417 50%, #1a1a1a 100%);
+            position: relative;
+            padding: 110px 0 80px;
+            overflow: hidden;
+        }
+        .breadcrumb-section::before {
+            content: '';
+            position: absolute; inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23BF9A72' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        .breadcrumb-section::after {
+            content: 'Dining & Wellness';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: var(--font-marcellus);
+            font-size: clamp(60px, 10vw, 120px);
+            color: rgba(255,255,255,0.04);
+            white-space: nowrap;
+            pointer-events: none;
+        }
+        .breadcrumb-content { position: relative; z-index: 2; text-align: center; }
+        .breadcrumb-tag {
+            display: inline-block;
+            font-family: var(--font-dancing);
+            font-size: 22px;
+            color: var(--primary-color1);
+            margin-bottom: 12px;
+        }
+        .breadcrumb-content h1 {
+            font-family: var(--font-marcellus);
+            font-size: clamp(32px, 5vw, 56px);
+            color: #fff;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        .breadcrumb-nav { display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 14px; }
+        .breadcrumb-nav a { color: var(--primary-color1); text-decoration: none; }
+        .breadcrumb-nav span { color: #888; }
+        .breadcrumb-nav .current { color: #fff; }
+
+        /* ============ SECTION HELPERS ============ */
+        .section-tag {
+            font-family: var(--font-dancing);
+            font-size: 22px;
+            color: var(--primary-color1);
+            display: block;
+            margin-bottom: 8px;
+        }
+        .section-title {
+            font-family: var(--font-marcellus);
+            font-size: clamp(28px, 4vw, 44px);
+            font-weight: 400;
+            color: var(--title-color);
+            line-height: 1.25;
+        }
+        .section-title span { color: var(--primary-color1); }
+        .divider-gold {
+            width: 60px; height: 2px;
+            background: linear-gradient(90deg, var(--primary-color1), transparent);
+            margin: 18px 0 22px;
+        }
+        .section-text { color: var(--text-color); line-height: 1.85; }
+
+        /* ============ DINING INTRO ============ */
+        .dining-intro { padding: 100px 0 80px; background: var(--bg-light); }
+        .dining-intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
+        .dining-intro-image-wrap { position: relative; }
+        .dining-main-img {
+            width: 100%; height: 520px; object-fit: cover;
+            border-radius: 4px;
+        }
+        .dining-floating-card {
+            position: absolute;
+            bottom: -30px; right: -30px;
+            background: var(--primary-color1);
+            color: #fff;
+            padding: 28px 32px;
+            border-radius: 4px;
+            min-width: 200px;
+            box-shadow: 0 20px 50px rgba(191,154,114,.35);
+        }
+        .dining-floating-card .big-num {
+            font-family: var(--font-marcellus);
+            font-size: 52px;
+            line-height: 1;
+            display: block;
+        }
+        .dining-floating-card p { font-size: 13px; margin: 6px 0 0; opacity: .9; }
+
+        /* image mosaic */
+        .img-mosaic { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .img-mosaic-main { grid-column: 1 / -1; }
+        .img-mosaic img { width: 100%; height: 200px; object-fit: cover; border-radius: 4px; }
+        .img-mosaic-main img { height: 280px; }
+
+        /* ============ MENU HIGHLIGHTS ============ */
+        .menu-highlights { padding: 100px 0; background: #fff; }
+        .menu-header { text-align: center; margin-bottom: 60px; }
+        .menu-header .divider-gold { margin: 18px auto 22px; }
+        .menu-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .menu-card {
+            border: 1px solid var(--borders-color);
+            border-radius: 4px;
+            overflow: hidden;
+            transition: transform .3s, box-shadow .3s;
+        }
+        .menu-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,.1); }
+        .menu-card-img { width: 100%; height: 240px; object-fit: cover; display: block; }
+        .menu-card-body { padding: 28px 26px; }
+        .menu-card-tag {
+            font-family: var(--font-dancing);
+            font-size: 16px;
+            color: var(--primary-color1);
+            display: block;
+            margin-bottom: 6px;
+        }
+        .menu-card-body h3 {
+            font-family: var(--font-marcellus);
+            font-size: 22px;
+            font-weight: 400;
+            margin-bottom: 10px;
+        }
+        .menu-card-body p { color: var(--text-color); font-size: 14px; line-height: 1.75; }
+        .menu-card-footer {
+            padding: 16px 26px;
+            border-top: 1px solid var(--borders-color);
+            display: flex; align-items: center; gap: 8px;
+            font-size: 13px; color: var(--text-color);
+        }
+        .menu-card-footer i { color: var(--primary-color1); }
+
+        /* ============ MEAL PHILOSOPHY ============ */
+        .meal-philosophy { padding: 100px 0; background: var(--bg-light); }
+        .philosophy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
+        .philosophy-features { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 36px; }
+        .feature-box {
+            background: #fff;
+            border: 1px solid var(--borders-color);
+            padding: 24px 22px;
+            border-radius: 4px;
+            transition: border-color .25s;
+        }
+        .feature-box:hover { border-color: var(--primary-color1); }
+        .feature-icon { font-size: 28px; color: var(--primary-color1); margin-bottom: 10px; display: block; }
+        .feature-box h4 {
+            font-family: var(--font-marcellus);
+            font-size: 17px; font-weight: 400; margin-bottom: 6px;
+        }
+        .feature-box p { font-size: 13px; color: var(--text-color); line-height: 1.7; }
+        .philosophy-img-wrap { position: relative; }
+        .philosophy-img-wrap img { width: 100%; height: 560px; object-fit: cover; border-radius: 4px; }
+        .philosophy-badge {
+            position: absolute; top: -20px; left: -20px;
+            width: 110px; height: 110px;
+            background: var(--black-color);
+            border-radius: 50%;
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            text-align: center;
+            border: 3px solid var(--primary-color1);
+        }
+        .philosophy-badge span:first-child { font-family: var(--font-marcellus); font-size: 28px; color: var(--primary-color1); line-height: 1; }
+        .philosophy-badge span:last-child { font-size: 11px; color: #aaa; margin-top: 3px; }
+
+        /* ============ WELLNESS INTRO BANNER ============ */
+        .wellness-banner {
+            padding: 100px 0;
+            background: var(--black-color);
+            position: relative;
+            overflow: hidden;
+        }
+        .wellness-banner::before {
+            content: '';
+            position: absolute; inset: 0;
+            background: radial-gradient(ellipse at 70% 50%, rgba(191,154,114,.15) 0%, transparent 60%);
+        }
+        .wellness-banner-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; position: relative; z-index: 1; }
+        .wellness-banner h2 {
+            font-family: var(--font-marcellus);
+            font-size: clamp(28px, 4vw, 46px);
+            color: #fff;
+            font-weight: 400;
+            line-height: 1.25;
+        }
+        .wellness-banner h2 em { font-style: italic; color: var(--primary-color1); }
+        .wellness-banner .section-text { color: #aaa; }
+        .wellness-banner .divider-gold { background: linear-gradient(90deg, var(--primary-color1), transparent); }
+        .wellness-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(255,255,255,.1); margin-top: 40px; border-radius: 4px; overflow: hidden; }
+        .wellness-stat-item { background: rgba(255,255,255,.04); padding: 28px 20px; text-align: center; }
+        .wellness-stat-item .num { font-family: var(--font-marcellus); font-size: 42px; color: var(--primary-color1); line-height: 1; }
+        .wellness-stat-item p { font-size: 12px; color: #888; margin-top: 6px; text-transform: uppercase; letter-spacing: .08em; }
+        .wellness-img-stack { position: relative; }
+        .wellness-img-stack img:first-child { width: 100%; height: 420px; object-fit: cover; border-radius: 4px; }
+        .wellness-img-stack img:last-child {
+            position: absolute; bottom: -30px; left: -30px;
+            width: 180px; height: 180px;
+            object-fit: cover;
+            border-radius: 4px;
+            border: 4px solid var(--black-color);
+        }
+
+        /* ============ WELLNESS PROGRAMS ============ */
+        .wellness-programs { padding: 100px 0; background: #fff; }
+        .programs-header { text-align: center; margin-bottom: 60px; }
+        .programs-header .divider-gold { margin: 18px auto 22px; }
+        .programs-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+        .program-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .program-card img { width: 100%; height: 340px; object-fit: cover; display: block; transition: transform .5s; }
+        .program-card:hover img { transform: scale(1.06); }
+        .program-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(to top, rgba(23,23,23,.92) 0%, rgba(23,23,23,.2) 60%, transparent 100%);
+            display: flex; flex-direction: column; justify-content: flex-end;
+            padding: 28px 22px;
+            transition: background .3s;
+        }
+        .program-card:hover .program-overlay { background: linear-gradient(to top, rgba(23,23,23,.96) 0%, rgba(23,23,23,.4) 60%, transparent 100%); }
+        .program-num {
+            font-family: var(--font-dancing);
+            font-size: 16px;
+            color: var(--primary-color1);
+            margin-bottom: 6px;
+        }
+        .program-overlay h3 {
+            font-family: var(--font-marcellus);
+            font-size: 20px; font-weight: 400; color: #fff;
+            margin-bottom: 8px;
+        }
+        .program-overlay p {
+            font-size: 13px; color: rgba(255,255,255,.65);
+            line-height: 1.65;
+            max-height: 0; overflow: hidden;
+            transition: max-height .4s ease;
+        }
+        .program-card:hover .program-overlay p { max-height: 100px; }
+
+        /* ============ DAILY SCHEDULE ============ */
+        .daily-schedule { padding: 100px 0; background: var(--bg-green-soft); }
+        .schedule-header { text-align: center; margin-bottom: 60px; }
+        .schedule-header .divider-gold { margin: 18px auto 22px; }
+        .schedule-timeline { max-width: 860px; margin: 0 auto; position: relative; }
+        .schedule-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0; bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--primary-color1), transparent);
+            transform: translateX(-50%);
+        }
+        .schedule-item { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 30px; margin-bottom: 40px; }
+        .schedule-item:nth-child(odd) .schedule-content { text-align: right; grid-column: 1; }
+        .schedule-item:nth-child(odd) .schedule-empty { grid-column: 3; }
+        .schedule-item:nth-child(even) .schedule-content { grid-column: 3; grid-row: 1; }
+        .schedule-item:nth-child(even) .schedule-dot { grid-column: 2; grid-row: 1; }
+        .schedule-item:nth-child(even) .schedule-empty { grid-column: 1; grid-row: 1; }
+        .schedule-dot {
+            width: 46px; height: 46px;
+            background: var(--primary-color1);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: #fff; font-size: 18px;
+            flex-shrink: 0;
+            position: relative; z-index: 1;
+            box-shadow: 0 4px 20px rgba(191,154,114,.4);
+        }
+        .schedule-content { background: #fff; border: 1px solid var(--borders-color); padding: 22px 26px; border-radius: 4px; }
+        .schedule-time { font-family: var(--font-dancing); font-size: 16px; color: var(--primary-color1); display: block; margin-bottom: 4px; }
+        .schedule-content h4 { font-family: var(--font-marcellus); font-size: 18px; font-weight: 400; margin-bottom: 6px; }
+        .schedule-content p { font-size: 13px; color: var(--text-color); line-height: 1.7; margin: 0; }
+
+        /* ============ SAMPLE MENU ============ */
+        .sample-menu { padding: 100px 0; background: #fff; }
+        .sample-menu-header { text-align: center; margin-bottom: 60px; }
+        .sample-menu-header .divider-gold { margin: 18px auto 22px; }
+        .menu-tabs { display: flex; gap: 0; justify-content: center; margin-bottom: 50px; border: 1px solid var(--borders-color); border-radius: 4px; overflow: hidden; display: inline-flex; }
+        .menu-tab {
+            padding: 12px 32px;
+            font-size: 14px; font-weight: 500;
+            cursor: pointer; border: none; background: #fff;
+            color: var(--text-color);
+            transition: background .25s, color .25s;
+            font-family: var(--font-dmsans);
+        }
+        .menu-tab.active, .menu-tab:hover { background: var(--primary-color1); color: #fff; }
+        .menu-tabs-wrap { text-align: center; }
+        .menu-table { width: 100%; border-collapse: collapse; }
+        .menu-table thead { background: var(--black-color); }
+        .menu-table thead th { padding: 16px 20px; font-family: var(--font-marcellus); font-size: 15px; font-weight: 400; color: #fff; text-align: left; }
+        .menu-table tbody tr { border-bottom: 1px solid var(--borders-color); transition: background .2s; }
+        .menu-table tbody tr:hover { background: #faf8f5; }
+        .menu-table tbody td { padding: 16px 20px; font-size: 14px; color: var(--text-color); }
+        .menu-table tbody td:first-child { font-family: var(--font-marcellus); color: var(--title-color); font-size: 15px; }
+        .badge-v { display: inline-block; background: #e9f5ea; color: #3a8a3e; font-size: 11px; padding: 2px 8px; border-radius: 20px; }
+        .badge-s { display: inline-block; background: #fff3e8; color: #c4602a; font-size: 11px; padding: 2px 8px; border-radius: 20px; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+
+        /* ============ TESTIMONIALS ============ */
+        .wellness-testimonials { padding: 100px 0; background: var(--black-color); position: relative; overflow: hidden; }
+        .wellness-testimonials::before {
+            content: '';
+            position: absolute; top: 0; left: 0; right: 0; height: 3px;
+            background: linear-gradient(90deg, transparent, var(--primary-color1), transparent);
+        }
+        .testimonials-header { text-align: center; margin-bottom: 60px; }
+        .testimonials-header h2 { color: #fff; }
+        .testimonials-header .divider-gold { margin: 18px auto 22px; }
+        .testimonials-header .section-tag { color: var(--primary-color1); }
+        .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .testimonial-card {
+            background: rgba(255,255,255,.05);
+            border: 1px solid rgba(255,255,255,.1);
+            border-radius: 4px;
+            padding: 34px 30px;
+        }
+        .stars { color: var(--primary-color1); font-size: 16px; margin-bottom: 18px; }
+        .testimonial-card blockquote { font-size: 15px; color: #ccc; line-height: 1.8; margin: 0 0 24px; font-style: italic; }
+        .testimonial-author { display: flex; align-items: center; gap: 14px; }
+        .author-avatar {
+            width: 48px; height: 48px;
+            border-radius: 50%;
+            background: var(--primary-color1);
+            display: flex; align-items: center; justify-content: center;
+            font-family: var(--font-marcellus); font-size: 20px; color: #fff;
+            flex-shrink: 0;
+        }
+        .author-name { font-family: var(--font-marcellus); font-size: 16px; color: #fff; }
+        .author-role { font-size: 12px; color: #888; }
+
+        /* ============ CTA ============ */
+        .wellness-cta { padding: 100px 0; background: var(--bg-light); }
+        .cta-inner {
+            background: linear-gradient(135deg, var(--black-color) 0%, #2d2417 100%);
+            border-radius: 8px;
+            padding: 80px 60px;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: center;
+            gap: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-inner::after {
+            content: '';
+            position: absolute;
+            right: -60px; top: -60px;
+            width: 300px; height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(191,154,114,.2) 0%, transparent 70%);
+        }
+        .cta-text h2 { font-family: var(--font-marcellus); font-size: 38px; color: #fff; font-weight: 400; line-height: 1.25; }
+        .cta-text p { color: #aaa; margin-top: 12px; font-size: 15px; }
+        .cta-actions { display: flex; flex-direction: column; gap: 14px; position: relative; z-index: 1; }
+        .btn-primary-gold {
+            display: inline-block;
+            background: var(--primary-color1);
+            color: #fff;
+            padding: 14px 36px;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 2px;
+            text-decoration: none;
+            text-align: center;
+            transition: background .25s;
+            white-space: nowrap;
+        }
+        .btn-primary-gold:hover { background: #a8855e; color: #fff; }
+        .btn-outline-white {
+            display: inline-block;
+            border: 1px solid rgba(255,255,255,.3);
+            color: #fff;
+            padding: 14px 36px;
+            font-size: 14px;
+            font-weight: 500;
+            border-radius: 2px;
+            text-decoration: none;
+            text-align: center;
+            transition: border-color .25s, background .25s;
+            white-space: nowrap;
+        }
+        .btn-outline-white:hover { border-color: var(--primary-color1); background: rgba(191,154,114,.1); color: #fff; }
+
+        /* ============ FOOTER ============ */
+        footer { background: var(--black-color); padding-top: 70px; }
+        .footer-top { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 50px; padding-bottom: 50px; border-bottom: 1px solid rgba(255,255,255,.08); }
+        .footer-brand img { height: 55px; margin-bottom: 18px; filter: brightness(10); }
+        .footer-brand p { font-size: 14px; color: #888; line-height: 1.8; }
+        .footer-col h5 { font-family: var(--font-marcellus); font-size: 18px; color: #fff; font-weight: 400; margin-bottom: 20px; }
+        .footer-col ul { list-style: none; padding: 0; margin: 0; }
+        .footer-col ul li { padding: 5px 0; }
+        .footer-col ul li a { font-size: 14px; color: #888; text-decoration: none; transition: color .25s; }
+        .footer-col ul li a:hover { color: var(--primary-color1); }
+        .footer-col address { font-style: normal; font-size: 14px; color: #888; line-height: 1.8; }
+        .footer-social { display: flex; gap: 12px; margin-top: 18px; }
+        .footer-social a {
+            width: 36px; height: 36px;
+            border: 1px solid rgba(255,255,255,.15);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: #888; font-size: 14px;
+            text-decoration: none;
+            transition: border-color .25s, color .25s;
+        }
+        .footer-social a:hover { border-color: var(--primary-color1); color: var(--primary-color1); }
+        .footer-menu { padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,.06); }
+        .footer-menu-wrap { display: flex; gap: 30px; flex-wrap: wrap; justify-content: center; }
+        .footer-menu-wrap a { font-size: 13px; color: #888; text-decoration: none; transition: color .25s; }
+        .footer-menu-wrap a:hover { color: var(--primary-color1); }
+        .footer-bottom { padding: 22px 0; text-align: center; }
+        .footer-bottom p { font-size: 13px; color: #666; }
+        .footer-bottom a { color: var(--primary-color1); text-decoration: none; }
+
+        /* ============ RESPONSIVE ============ */
+        @media (max-width: 1100px) {
+            .programs-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 900px) {
+            .dining-intro-grid, .philosophy-grid, .wellness-banner-grid { grid-template-columns: 1fr; gap: 40px; }
+            .menu-cards { grid-template-columns: 1fr 1fr; }
+            .testimonials-grid { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; }
+            .footer-top { grid-template-columns: 1fr 1fr; }
+            .cta-inner { grid-template-columns: 1fr; }
+            .cta-actions { flex-direction: row; }
+            .dining-floating-card { position: static; margin-top: 20px; }
+            .philosophy-badge { width: 90px; height: 90px; }
+        }
+        @media (max-width: 768px) {
+            .main-menu { display: none; }
+            .mobile-menu-btn { display: block; }
+            .schedule-timeline::before { left: 22px; }
+            .schedule-item { grid-template-columns: auto 1fr; }
+            .schedule-item:nth-child(odd) .schedule-content,
+            .schedule-item:nth-child(even) .schedule-content { text-align: left; grid-column: 2; grid-row: 1; }
+            .schedule-item:nth-child(odd) .schedule-dot { grid-column: 1; }
+            .schedule-item:nth-child(even) .schedule-dot { grid-column: 1; }
+            .schedule-empty { display: none; }
+            .programs-grid { grid-template-columns: 1fr 1fr; }
+            .menu-cards { grid-template-columns: 1fr; }
+            .philosophy-features { grid-template-columns: 1fr; }
+            .wellness-stats { grid-template-columns: 1fr; }
+            .footer-top { grid-template-columns: 1fr; }
+            .cta-inner { padding: 50px 30px; }
+            .cta-actions { flex-direction: column; }
+            .img-mosaic { grid-template-columns: 1fr; }
+            .img-mosaic-main { grid-column: 1; }
+        }
+        @media (max-width: 480px) {
+            .programs-grid { grid-template-columns: 1fr; }
+            .breadcrumb-section { padding: 80px 0 60px; }
+        }
+    </style>
+</head>
+
+<body class="tt-magic-cursor bg-color">
+
+    <!-- Back To Top -->
+    <div class="progress-wrap">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+        </svg>
+        <svg class="arrow" width="22" height="25" viewBox="0 0 24 23" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0.556131 11.4439L11.8139 0.186067L13.9214 2.29352L13.9422 20.6852L9.70638 20.7061L9.76793 8.22168L3.6064 14.4941L0.556131 11.4439Z" />
+            <path d="M23.1276 11.4999L16.0288 4.40105L15.9991 10.4203L20.1031 14.5243L23.1276 11.4999Z" />
+        </svg>
+    </div>
+
+    <!-- HEADER -->
+    <div class="header-offer-topbar-wrap home1-header">
+        <div class="offer-topbar">
+            <div class="container">
+                <span>Where mornings begin with light, air, and stillness.</span>
+            </div>
+            <div class="offer-topbar-close-btn"><i class="bi bi-x"></i></div>
+        </div>
+        <header class="style-1 three">
+            <div class="header-inner">
+                <div style="display:flex;align-items:center;gap:40px;">
+                    <a href="index.html" class="header-logo">
+                        <img src="assets/img/small2.png" alt="Green Gardens Logo" style="height:55px;width:auto;">
+                    </a>
+                    <nav class="main-menu">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="industries-details.html">Our Story</a></li>
+                            <li class="active" style="position:relative;">
+                                <a href="#">Life @ Green Gardens</a>
+                                <ul class="sub-menu">
+                                    <li><a href="service-style-1.html">A Day Here</a></li>
+                                    <li><a href="service-style-2.html" style="color:var(--primary-color1)!important;">Dining & Wellness</a></li>
+                                    <li><a href="service-style-3.html">Community</a></li>
+                                    <li><a href="service-style-4.html">Gallery</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">Your Home</a>
+                                <ul class="sub-menu">
+                                    <li><a href="blog-grid.html">The Villas</a></li>
+                                    <li><a href="blog-side-bar.html">Customisation</a></li>
+                                    <li><a href="blog-standard.html">Why Pala</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="nav-right">
+                    <div class="hotline-area d-xl-flex d-none" style="display:flex;align-items:center;gap:12px;">
+                        <svg width="28" height="28" viewBox="0 0 30 30" fill="var(--primary-color1)" xmlns="http://www.w3.org/2000/svg"><path d="M28.1578 21.1819C28.1081 21.1406 22.4869 17.1413 20.9691 17.3859C20.2369 17.5153 19.8188 18.015 18.9797 19.0144C18.7477 19.2926 18.5105 19.5664 18.2681 19.8356C17.7378 19.6629 17.2205 19.4523 16.7203 19.2056C14.138 17.9484 12.0516 15.862 10.7944 13.2797C10.5477 12.7795 10.3371 12.2622 10.1644 11.7319C10.44 11.4797 10.8263 11.1544 10.9913 11.0156C11.9859 10.1812 12.4847 9.76219 12.6141 9.02906C12.8794 7.51125 8.85938 1.89187 8.81813 1.84125C8.63505 1.58162 8.39662 1.36587 8.12003 1.20958C7.84345 1.05329 7.53561 0.960361 7.21875 0.9375C5.58938 0.9375 0.9375 6.97125 0.9375 7.98844C0.9375 8.0475 1.02281 14.0512 8.42625 21.5822C15.9488 28.9772 21.9525 29.0625 22.0116 29.0625C23.0278 29.0625 29.0625 24.4106 29.0625 22.7812C29.0394 22.4643 28.9463 22.1565 28.7898 21.8799C28.6334 21.6034 28.4175 21.3649 28.1578 21.1819Z"/></svg>
+                        <div>
+                            <span style="font-size:11px;color:#888;display:block;">To More Inquiry</span>
+                            <a href="tel:+918921234567" style="font-size:15px;font-weight:600;color:var(--title-color);text-decoration:none;">+91 892 123 4567</a>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="primary-btn1">Visit Us</a>
+                    <button class="mobile-menu-btn">
+                        <svg width="22" height="18" viewBox="0 0 20 18" fill="var(--title-color)" xmlns="http://www.w3.org/2000/svg"><path d="M1.29445 2.8421H10.5237C11.2389 2.8421 11.8182 2.2062 11.8182 1.42105C11.8182 0.635903 11.2389 0 10.5237 0H1.29445C0.579249 0 0 0.635903 0 1.42105C0 2.2062 0.579249 2.8421 1.29445 2.8421Z"/><path d="M1.23002 10.421H18.77C19.4496 10.421 20 9.78506 20 8.99991C20 8.21476 19.4496 7.57886 18.77 7.57886H1.23002C0.550421 7.57886 0 8.21476 0 8.99991C0 9.78506 0.550421 10.421 1.23002 10.421Z"/><path d="M18.8052 15.1579H10.2858C9.62563 15.1579 9.09094 15.7938 9.09094 16.5789C9.09094 17.3641 9.62563 18 10.2858 18H18.8052C19.4653 18 20 17.3641 20 16.5789C20 15.7938 19.4653 15.1579 18.8052 15.1579Z"/></svg>
+                    </button>
+                </div>
+            </div>
+        </header>
+    </div>
+
+    <!-- BREADCRUMB -->
+    <section class="breadcrumb-section">
+        <div class="container">
+            <div class="breadcrumb-content">
+                <span class="breadcrumb-tag">Nourish. Restore. Thrive.</span>
+                <h1>Dining & Wellness</h1>
+                <nav class="breadcrumb-nav">
+                    <a href="index.html">Home</a>
+                    <span>/</span>
+                    <a href="#">Life @ Green Gardens</a>
+                    <span>/</span>
+                    <span class="current">Dining & Wellness</span>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <!-- DINING INTRO -->
+    <section class="dining-intro">
+        <div class="container">
+            <div class="dining-intro-grid">
+                <div class="dining-intro-image-wrap">
+                    <div class="img-mosaic">
+                        <div class="img-mosaic-main">
+                            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=900&q=80" alt="Restaurant at Green Gardens" loading="lazy">
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=500&q=80" alt="Nutritious meal" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=500&q=80" alt="Fresh ingredients" loading="lazy">
+                    </div>
+                    <div class="dining-floating-card">
+                        <span class="big-num">3×</span>
+                        <p>Nourishing meals<br>served daily</p>
+                    </div>
+                </div>
+                <div class="dining-intro-text">
+                    <span class="section-tag">Our Live Restaurant</span>
+                    <h2 class="section-title">Food That Feels Like <span>Home</span></h2>
+                    <div class="divider-gold"></div>
+                    <p class="section-text">At Green Gardens, dining is never an afterthought. Our multi-cuisine kitchen prepares three wholesome, flavourful meals every day — crafted around each resident's preferences, dietary requirements, and cherished tastes from home.</p>
+                    <p class="section-text" style="margin-top:16px;">From the soft warmth of a morning Kerala breakfast to a leisurely lunch in our spacious dining area, every meal is an occasion to savour, connect, and enjoy life fully.</p>
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:32px;">
+                        <div style="display:flex;align-items:center;gap:12px;">
+                            <i class="bi bi-check-circle-fill" style="color:var(--primary-color1);font-size:20px;flex-shrink:0;"></i>
+                            <span style="font-size:14px;">Choice of menu daily</span>
+                        </div>
+                        <div style="display:flex;align-items:center;gap:12px;">
+                            <i class="bi bi-check-circle-fill" style="color:var(--primary-color1);font-size:20px;flex-shrink:0;"></i>
+                            <span style="font-size:14px;">Multi-cuisine kitchen</span>
+                        </div>
+                        <div style="display:flex;align-items:center;gap:12px;">
+                            <i class="bi bi-check-circle-fill" style="color:var(--primary-color1);font-size:20px;flex-shrink:0;"></i>
+                            <span style="font-size:14px;">Nutritionist-guided meals</span>
+                        </div>
+                        <div style="display:flex;align-items:center;gap:12px;">
+                            <i class="bi bi-check-circle-fill" style="color:var(--primary-color1);font-size:20px;flex-shrink:0;"></i>
+                            <span style="font-size:14px;">Special diet accommodated</span>
+                        </div>
+                        <div style="display:flex;align-items:center;gap:12px;">
+                            <i class="bi bi-check-circle-fill" style="color:var(--primary-color1);font-size:20px;flex-shrink:0;"></i>
+                            <span style="font-size:14px;">Live restaurant experience</span>
+                        </div>
+                        <div style="display:flex;align-items:center;gap:12px;">
+                            <i class="bi bi-check-circle-fill" style="color:var(--primary-color1);font-size:20px;flex-shrink:0;"></i>
+                            <span style="font-size:14px;">In-room dining available</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MENU HIGHLIGHTS -->
+    <section class="menu-highlights">
+        <div class="container">
+            <div class="menu-header">
+                <span class="section-tag">What We Serve</span>
+                <h2 class="section-title">A Cuisine for Every <span>Craving</span></h2>
+                <div class="divider-gold"></div>
+                <p class="section-text" style="max-width:560px;margin:0 auto;">Three dining experiences, thoughtfully curated — each one a celebration of flavour, nutrition, and the comfort of a meal that truly feels like home.</p>
+            </div>
+            <div class="menu-cards">
+                <div class="menu-card">
+                    <img class="menu-card-img" src="https://images.unsplash.com/photo-1567337710282-00832b415979?w=700&q=80" alt="Kerala Breakfast" loading="lazy">
+                    <div class="menu-card-body">
+                        <span class="menu-card-tag">Morning</span>
+                        <h3>Kerala Breakfast</h3>
+                        <p>Begin the day right with beloved breakfast classics — soft idlis, golden dosas, appam with stew, puttu with kadala curry, and freshly brewed filter coffee or herbal tea.</p>
+                    </div>
+                    <div class="menu-card-footer">
+                        <i class="bi bi-clock"></i>
+                        <span>Served 7:30 AM – 9:30 AM</span>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <img class="menu-card-img" src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=700&q=80" alt="Wholesome Lunch" loading="lazy">
+                    <div class="menu-card-body">
+                        <span class="menu-card-tag">Afternoon</span>
+                        <h3>Wholesome Lunch</h3>
+                        <p>A warm, balanced lunch with a rotating menu of Kerala sadhya-inspired dishes, North Indian options, and light continental alternatives — always fresh, always flavourful.</p>
+                    </div>
+                    <div class="menu-card-footer">
+                        <i class="bi bi-clock"></i>
+                        <span>Served 12:30 PM – 2:00 PM</span>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <img class="menu-card-img" src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3b42?w=700&q=80" alt="Evening Dinner" loading="lazy">
+                    <div class="menu-card-body">
+                        <span class="menu-card-tag">Evening</span>
+                        <h3>Dinner & Evening Snack</h3>
+                        <p>Wind down with a light, nutritious dinner served in the warmth of our dining area or your own villa, followed by a choice of evening snacks and beverages at the clubhouse.</p>
+                    </div>
+                    <div class="menu-card-footer">
+                        <i class="bi bi-clock"></i>
+                        <span>Snack 4:30 PM | Dinner 7:00 PM</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MEAL PHILOSOPHY -->
+    <section class="meal-philosophy">
+        <div class="container">
+            <div class="philosophy-grid">
+                <div>
+                    <span class="section-tag">Our Approach to Food</span>
+                    <h2 class="section-title">Nutrition Meets <span>Love</span></h2>
+                    <div class="divider-gold"></div>
+                    <p class="section-text">Every plate we serve is guided by one simple principle: residents should feel genuinely cared for. Our kitchen team works with a consultant nutritionist to design meals that are not only delicious, but deeply supportive of senior health.</p>
+                    <p class="section-text" style="margin-top:14px;">We understand that food is deeply emotional. Families tell us the smell of a familiar curry, a warm bowl of rice kanji, or a perfectly soft chappati brings comfort that goes far beyond nutrition. We honour that.</p>
+                    <div class="philosophy-features">
+                        <div class="feature-box">
+                            <i class="bi bi-heart-pulse feature-icon"></i>
+                            <h4>Heart-Healthy Options</h4>
+                            <p>Low-sodium, low-fat preparations for residents managing blood pressure or cardiac conditions.</p>
+                        </div>
+                        <div class="feature-box">
+                            <i class="bi bi-droplet feature-icon"></i>
+                            <h4>Diabetic-Friendly</h4>
+                            <p>Low-GI meals and sugar-free alternatives thoughtfully included in every menu cycle.</p>
+                        </div>
+                        <div class="feature-box">
+                            <i class="bi bi-leaf feature-icon"></i>
+                            <h4>Fresh Ingredients</h4>
+                            <p>Produce sourced locally from Elanji and neighbouring farms — always seasonal, always fresh.</p>
+                        </div>
+                        <div class="feature-box">
+                            <i class="bi bi-people feature-icon"></i>
+                            <h4>Family Favourites</h4>
+                            <p>Residents share their recipes. Our kitchen learns them, preserves them, and prepares them with care.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="philosophy-img-wrap">
+                    <div class="philosophy-badge">
+                        <span>100%</span>
+                        <span>Homestyle Cooking</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=700&q=80" alt="Our kitchen" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SAMPLE MENU -->
+    <section class="sample-menu">
+        <div class="container">
+            <div class="sample-menu-header">
+                <span class="section-tag">Taste Before You Decide</span>
+                <h2 class="section-title">A Glimpse of Our <span>Weekly Menu</span></h2>
+                <div class="divider-gold"></div>
+                <p class="section-text" style="max-width:540px;margin:0 auto 30px;">Here's a sample of what residents might enjoy across a typical week — varied, balanced, and always familiar.</p>
+            </div>
+            <div class="menu-tabs-wrap">
+                <div class="menu-tabs">
+                    <button class="menu-tab active" onclick="switchTab('breakfast')">Breakfast</button>
+                    <button class="menu-tab" onclick="switchTab('lunch')">Lunch</button>
+                    <button class="menu-tab" onclick="switchTab('dinner')">Dinner</button>
+                </div>
+            </div>
+            <div id="tab-breakfast" class="tab-content active" style="margin-top:36px;">
+                <table class="menu-table">
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>Main Dish</th>
+                            <th>Accompaniment</th>
+                            <th>Beverage</th>
+                            <th>Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Monday</td><td>Idli & Sambar</td><td>Coconut Chutney</td><td>Filter Coffee</td><td><span class="badge-v">Veg</span></td></tr>
+                        <tr><td>Tuesday</td><td>Puttu & Kadala Curry</td><td>Banana</td><td>Herbal Tea</td><td><span class="badge-v">Veg</span></td></tr>
+                        <tr><td>Wednesday</td><td>Egg Appam</td><td>Stew</td><td>Filter Coffee</td><td><span class="badge-s">Non-Veg</span></td></tr>
+                        <tr><td>Thursday</td><td>Poha / Upma</td><td>Pickle & Curd</td><td>Green Tea</td><td><span class="badge-v">Veg</span></td></tr>
+                        <tr><td>Friday</td><td>Dosa & Chutney</td><td>Tomato Sambar</td><td>Filter Coffee</td><td><span class="badge-v">Veg</span></td></tr>
+                        <tr><td>Saturday</td><td>Chappati & Kurma</td><td>Fruit Bowl</td><td>Milk / Tea</td><td><span class="badge-v">Veg</span></td></tr>
+                        <tr><td>Sunday</td><td>Special Appam</td><td>Egg Curry</td><td>Filter Coffee</td><td><span class="badge-s">Non-Veg</span></td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="tab-lunch" class="tab-content" style="margin-top:36px;">
+                <table class="menu-table">
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>Rice & Curry</th>
+                            <th>Side Dishes</th>
+                            <th>Dessert</th>
+                            <th>Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Monday</td><td>Red Rice & Fish Curry</td><td>Thoran & Pickle</td><td>Banana</td><td><span class="badge-s">Non-Veg</span></td></tr>
+                        <tr><td>Tuesday</td><td>Rice & Sambar</td><td>Aviyal & Papad</td><td>Payasam</td><td><span class="badge-v">Veg</span></td></tr>
+                        <tr><td>Wednesday</td><td>Rice & Chicken Curry</td><td>Beans Thoran</td><td>Fruit</td><td><span class="badge-s">Non-Veg</span></td></tr>
+                        <tr><td>Thursday</td><td>Dal Rice</td><td>Mixed Vegetable Curry</td><td>Curd</td><td><span class="badge-v">Veg</span></td></tr>
+                        <tr><td>Friday</td><td>Rice & Rasam</td><td>Bitter Gourd Fry</td><td>Halwa</td><td><span class="badge-v">Veg</span></td></tr>
+                        <tr><td>Saturday</td><td>Biriyani</td><td>Raita & Pickle</td><td>Ice Cream</td><td><span class="badge-s">Non-Veg</span></td></tr>
+                        <tr><td>Sunday</td><td>Sadhya-Style Meal</td><td>Multiple Kerala Curries</td><td>Payasam</td><td><span class="badge-v">Veg</span></td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="tab-dinner" class="tab-content" style="margin-top:36px;">
+                <table class="menu-table">
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>Main Course</th>
+                            <th>Soup / Starter</th>
+                            <th>Snack (4:30 PM)</th>
+                            <th>Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Monday</td><td>Chappati & Dal</td><td>Tomato Soup</td><td>Biscuits & Tea</td><td><span class="badge-v">Veg</span></td></tr>
+                        <tr><td>Tuesday</td><td>Kanji & Stir Fry</td><td>Vegetable Broth</td><td>Banana Chips</td><td><span class="badge-v">Veg</span></td></tr>
+                        <tr><td>Wednesday</td><td>Rice & Fish Fry</td><td>Sweet Corn Soup</td><td>Murukku & Tea</td><td><span class="badge-s">Non-Veg</span></td></tr>
+                        <tr><td>Thursday</td><td>Chappati & Sabzi</td><td>Clear Veg Soup</td><td>Dates & Nuts</td><td><span class="badge-v">Veg</span></td></tr>
+                        <tr><td>Friday</td><td>Fried Rice & Gravy</td><td>Mushroom Soup</td><td>Samosa</td><td><span class="badge-v">Veg</span></td></tr>
+                        <tr><td>Saturday</td><td>Puttu & Egg Roast</td><td>Rasam</td><td>Pazham Pori</td><td><span class="badge-s">Non-Veg</span></td></tr>
+                        <tr><td>Sunday</td><td>Noodles / Fried Rice</td><td>Veg Spring Roll</td><td>Tea Cake</td><td><span class="badge-v">Veg</span></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- WELLNESS INTRO BANNER -->
+    <section class="wellness-banner">
+        <div class="container">
+            <div class="wellness-banner-grid">
+                <div>
+                    <span class="section-tag">Wellness at Green Gardens</span>
+                    <h2>Active Living, <em>Not Passive</em> Care</h2>
+                    <div class="divider-gold"></div>
+                    <p class="section-text">Wellness at Green Gardens is holistic — it's the yoga mat at sunrise, the laughter in a group class, the quiet conversation with a counsellor, and the confidence of knowing a nurse is always nearby. We believe retirement should be your most alive chapter.</p>
+                    <div class="wellness-stats">
+                        <div class="wellness-stat-item">
+                            <span class="num">24/7</span>
+                            <p>Nurse on-site</p>
+                        </div>
+                        <div class="wellness-stat-item">
+                            <span class="num">7×</span>
+                            <p>Weekly doctor visit</p>
+                        </div>
+                        <div class="wellness-stat-item">
+                            <span class="num">5+</span>
+                            <p>Wellness programs</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="wellness-img-stack">
+                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=700&q=80" alt="Yoga at Green Gardens" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=80" alt="Wellness session" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WELLNESS PROGRAMS -->
+    <section class="wellness-programs">
+        <div class="container">
+            <div class="programs-header">
+                <span class="section-tag">Our Programmes</span>
+                <h2 class="section-title">Every Day is a <span>Wellness Day</span></h2>
+                <div class="divider-gold"></div>
+                <p class="section-text" style="max-width:580px;margin:0 auto;">We offer a range of curated wellness activities designed to keep mind, body, and spirit in harmony — led by qualified instructors and healthcare professionals.</p>
+            </div>
+            <div class="programs-grid">
+                <div class="program-card">
+                    <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&q=80" alt="Morning Yoga" loading="lazy">
+                    <div class="program-overlay">
+                        <span class="program-num">01.</span>
+                        <h3>Morning Yoga</h3>
+                        <p>Gentle asana and pranayama sessions at sunrise, tailored for seniors. Improves flexibility, balance, and mental calm.</p>
+                    </div>
+                </div>
+                <div class="program-card">
+                    <img src="https://images.unsplash.com/photo-1573879541250-58ae8b322b40?w=600&q=80" alt="Wellness Classes" loading="lazy">
+                    <div class="program-overlay">
+                        <span class="program-num">02.</span>
+                        <h3>Motivation & Mindfulness</h3>
+                        <p>Weekly group sessions on emotional well-being, positivity, and stress management guided by a wellness counsellor.</p>
+                    </div>
+                </div>
+                <div class="program-card">
+                    <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&q=80" alt="Group Activities" loading="lazy">
+                    <div class="program-overlay">
+                        <span class="program-num">03.</span>
+                        <h3>Lifestyle & Group Activities</h3>
+                        <p>Board games, music evenings, craft sessions, cultural celebrations and gardening clubs — always something to look forward to.</p>
+                    </div>
+                </div>
+                <div class="program-card">
+                    <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&q=80" alt="Medical Support" loading="lazy">
+                    <div class="program-overlay">
+                        <span class="program-num">04.</span>
+                        <h3>Allied Health Support</h3>
+                        <p>Physiotherapy, occupational therapy coordination, and allied health services arranged on-site or through our hospital tie-ups.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DAILY SCHEDULE -->
+    <section class="daily-schedule">
+        <div class="container">
+            <div class="schedule-header">
+                <span class="section-tag">Your Day, Your Rhythm</span>
+                <h2 class="section-title">A Typical Day at <span>Green Gardens</span></h2>
+                <div class="divider-gold"></div>
+                <p class="section-text" style="max-width:560px;margin:0 auto;">Every day here is structured with care but filled with freedom. Here's how a resident's day might flow — nourishing from morning to evening.</p>
+            </div>
+            <div class="schedule-timeline">
+                <div class="schedule-item">
+                    <div class="schedule-content">
+                        <span class="schedule-time">6:00 – 7:00 AM</span>
+                        <h4>Morning Yoga & Walk</h4>
+                        <p>Begin with gentle yoga in the garden, morning walks on landscaped paths, and optional meditation.</p>
+                    </div>
+                    <div class="schedule-dot"><i class="bi bi-sunrise"></i></div>
+                    <div class="schedule-empty"></div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-empty"></div>
+                    <div class="schedule-dot"><i class="bi bi-cup-hot"></i></div>
+                    <div class="schedule-content">
+                        <span class="schedule-time">7:30 – 9:30 AM</span>
+                        <h4>Breakfast</h4>
+                        <p>A warm, freshly prepared breakfast served in the dining area or your own villa — your choice each morning.</p>
+                    </div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-content">
+                        <span class="schedule-time">10:00 AM – 12:00 PM</span>
+                        <h4>Activities & Engagement</h4>
+                        <p>Join library time, music sessions, craft activities, or simply relax in the garden lounge with good company.</p>
+                    </div>
+                    <div class="schedule-dot"><i class="bi bi-puzzle"></i></div>
+                    <div class="schedule-empty"></div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-empty"></div>
+                    <div class="schedule-dot"><i class="bi bi-bowl-hot"></i></div>
+                    <div class="schedule-content">
+                        <span class="schedule-time">12:30 – 2:00 PM</span>
+                        <h4>Lunch & Rest</h4>
+                        <p>A wholesome lunch followed by peaceful rest time. Afternoon nap is always welcome — no clocks, no rush.</p>
+                    </div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-content">
+                        <span class="schedule-time">4:30 PM</span>
+                        <h4>Evening Tea & Snacks</h4>
+                        <p>Gather at the clubhouse for tea, snacks, and easy conversation. One of the most beloved parts of the day.</p>
+                    </div>
+                    <div class="schedule-dot"><i class="bi bi-people"></i></div>
+                    <div class="schedule-empty"></div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-empty"></div>
+                    <div class="schedule-dot"><i class="bi bi-moon-stars"></i></div>
+                    <div class="schedule-content">
+                        <span class="schedule-time">7:00 PM</span>
+                        <h4>Dinner & Evening</h4>
+                        <p>A light, nourishing dinner followed by optional movie nights, cultural evenings, or quiet time in your villa.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="wellness-testimonials">
+        <div class="container">
+            <div class="testimonials-header">
+                <span class="section-tag">What Families Say</span>
+                <h2 class="section-title" style="color:#fff;">Heard from Those Who <span>Matter Most</span></h2>
+                <div class="divider-gold"></div>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <blockquote>"Amma always said she missed her own cooking. The kitchen team here sat with her, noted every recipe, and now her fish curry appears on the Friday menu. I cried when she told me that."</blockquote>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">R</div>
+                        <div>
+                            <div class="author-name">Reena Mathew</div>
+                            <div class="author-role">Daughter — Dubai, UAE</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <blockquote>"At 68, I never thought I'd be doing yoga every morning. The instructor is so patient. My knees are better, I sleep better, and I feel twenty years younger some days."</blockquote>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">G</div>
+                        <div>
+                            <div class="author-name">George Kurien</div>
+                            <div class="author-role">Resident — Retired Teacher</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <blockquote>"Dad is diabetic, and I was worried about his diet. The team sends us a weekly menu. His sugar levels are the best they've been in five years. The food here is genuinely good for him."</blockquote>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">A</div>
+                        <div>
+                            <div class="author-name">Anoop Varghese</div>
+                            <div class="author-role">Son — Toronto, Canada</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="wellness-cta">
+        <div class="container">
+            <div class="cta-inner">
+                <div class="cta-text">
+                    <h2>Taste the Green Gardens Life.<br>Schedule a Personal Visit.</h2>
+                    <p>Come for a meal. Meet the team. Walk the gardens. Let your parents decide — because this is their home.</p>
+                </div>
+                <div class="cta-actions">
+                    <a href="contact.html" class="btn-primary-gold">Book a Visit</a>
+                    <a href="tel:+918921234567" class="btn-outline-white">Call +91 892 123 4567</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <img src="assets/img/small2.png" alt="Green Gardens">
+                    <p>Blending timeless charm with thoughtful care, Green Gardens offers more than just a home — we deliver a life beautifully lived.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-youtube"></i></a>
+                        <a href="#"><i class="bi bi-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h5>Quick Links</h5>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="industries-details.html">Our Story</a></li>
+                        <li><a href="service-style-1.html">A Day Here</a></li>
+                        <li><a href="service-style-2.html">Dining & Wellness</a></li>
+                        <li><a href="service-style-3.html">Community</a></li>
+                        <li><a href="blog-grid.html">The Villas</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Address</h5>
+                    <address>
+                        Green Gardens<br>
+                        16/13 Kuzhikulam Valavoor,<br>
+                        Kottayam, Pala, Kerala,<br>
+                        India — 686635
+                    </address>
+                    <ul style="margin-top:16px;">
+                        <li><a href="tel:+918921234567">+91 892 123 4567</a></li>
+                        <li><a href="mailto:hello@greengardenskl.com">hello@greengardenskl.com</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-menu">
+            <div class="container">
+                <div class="footer-menu-wrap">
+                    <a href="room-details-style-1.html">Living Spaces</a>
+                    <a href="service-style-1.html">Daily Living</a>
+                    <a href="about-us.html">Our Story</a>
+                    <a href="blog-grid.html">Articles</a>
+                    <a href="#">Terms & Conditions</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>©Copyright 2025 <a href="index.html">Green Gardens</a> | Design By <a href="https://www.ornabyte.com/">Ornabyte</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+
+    <script>
+        // Tab switching for sample menu
+        function switchTab(tab) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.menu-tab').forEach(el => el.classList.remove('active'));
+            document.getElementById('tab-' + tab).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        // Offer topbar close
+        document.querySelector('.offer-topbar-close-btn')?.addEventListener('click', function() {
+            document.querySelector('.offer-topbar').style.display = 'none';
+        });
+
+        // Back to top scroll progress
+        window.addEventListener('scroll', function() {
+            const wrap = document.querySelector('.progress-wrap');
+            if (wrap) {
+                wrap.classList.toggle('active-progress', window.scrollY > 200);
+            }
+        });
+
+        // Intersection observer for scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.menu-card, .program-card, .feature-box, .schedule-content, .testimonial-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
