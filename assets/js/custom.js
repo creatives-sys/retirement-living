@@ -93,7 +93,7 @@
     delay: 10,
     time: 1000,
   });
-  
+
   // Room And Suites Slider
   var swiper = new Swiper(".room-and-suites-slider", {
     slidesPerView: 1,
@@ -1791,4 +1791,67 @@
       }
     });
   });
+
+  // NRI Family Reassurance Tab/Accordion Logic
+  $(document).ready(function () {
+    const nriData = {
+      owner: {
+        title: "Owner-Led Management",
+        text: "The qualified owner is on-site and accountable every single day. Decisions happen fast, and care remains deeply personal ,  never outsourced to corporate layers.",
+        quote: "You will always speak directly to someone who knows and cares for your parent by name.",
+        author: "- Beena Mathew, Founder",
+        badge: "Owner-Led Care"
+      },
+      comm: {
+        title: "Transparent Updates",
+        text: "Receive regular, clear updates on health, activities, and daily wellness from people you know. You will always be informed ,  no need to chase information.",
+        quote: "Distance disappears when you are kept informed of every small milestone and checkup.",
+        author: "- Clinical Coordination Team",
+        badge: "Proactive Updates"
+      },
+      calls: {
+        title: "Seamless Video Support",
+        text: "Our staff proactively help residents setup and connect on regular high-definition video calls so staying close with family abroad is easy and natural, every single day.",
+        quote: "Seeing their parents smiling and active brings the ultimate comfort to children abroad.",
+        author: "- Resident Welfare Officer",
+        badge: "Always Connected"
+      },
+      stays: {
+        title: "Homecoming Guest Stays",
+        text: "When you visit from abroad, stay right here on campus in our comfortable guest suites. No hotel bookings or travel distance. Spend maximum time with your parents.",
+        quote: "Your visits should feel like coming home, with everything arranged for your comfort.",
+        author: "- Guest Relations Desk",
+        badge: "Grandchild-Friendly"
+      }
+    };
+
+    $('.nri-tab-item').on('click', function () {
+      const tabId = $(this).data('tab');
+      if (!tabId || !nriData[tabId]) return;
+
+      // Update active state in tabs
+      $('.nri-tab-item').removeClass('active');
+      $(this).addClass('active');
+
+      // Update showcase content with animations
+      const targetData = nriData[tabId];
+      const $showcase = $('.showcase-card');
+
+      // Add animate out/in class
+      $showcase.removeClass('nri-fade-in');
+      void $showcase[0].offsetWidth; // trigger reflow
+      $showcase.addClass('nri-fade-in');
+
+      // Swap text elements
+      $('#nri-showcase-title').text(targetData.title);
+      $('#nri-showcase-text').text(targetData.text);
+      $showcase.find('.quote-text').text('"' + targetData.quote + '"');
+      $showcase.find('.quote-author').text(targetData.author);
+
+      // Swap badge and preserve the dot
+      const $badge = $showcase.find('.showcase-badge');
+      $badge.html('<span class="pulse-dot"></span> ' + targetData.badge);
+    });
+  });
 })(jQuery);
+

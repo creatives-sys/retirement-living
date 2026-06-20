@@ -4,8 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Marcellus&family=Dancing+Script:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/css/jquery-ui.css" rel="stylesheet">
     <link href="assets/css/bootstrap-icons.css" rel="stylesheet">
@@ -15,17 +18,44 @@
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
     <link href="assets/css/boxicons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/custom-layout.css">
     <title>Community – Green Gardens</title>
     <link rel="icon" href="assets/img/" type="image/gif" sizes="20x20">
 
     <style>
         /* =========================================================
-           PAGE-SPECIFIC STYLES — COMMUNITY (service-style-3.html)
+           PAGE-SPECIFIC STYLES ,  COMMUNITY (service-style-3.html)
+           Designed to align with forest green, gold, cream and sage.
         ========================================================= */
+
+        :root {
+            --primary-color1: #9E8B5A;
+            /* Theme Gold */
+            --title-color: #102A24;
+            /* Theme Forest Green */
+            --body-color: #555555;
+            --bg-color: #fcfbf7;
+            /* Theme Cream */
+
+            --theme-green: #102A24;
+            --theme-gold: #9E8B5A;
+            --theme-sage: #edf1ee;
+            /* Theme Sage */
+            --theme-cream: #fcfbf7;
+            --theme-white: #ffffff;
+            --theme-text-dark: #555555;
+            --theme-border: rgba(16, 42, 36, 0.08);
+
+            --font-dancing: "Dancing Script", sans-serif;
+            --font-marcellus: "Marcellus", sans-serif;
+            --font-dmsans: "Poppins", sans-serif;
+
+            --transition-smooth: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+        }
 
         /* ── Hero ────────────────────────────────────────────── */
         .comm-hero {
-            background-color: #244539;
+            background-color: var(--theme-green);
             min-height: 88vh;
             display: flex;
             flex-direction: column;
@@ -35,6 +65,7 @@
             overflow: hidden;
             padding-bottom: 80px;
         }
+
         .comm-hero::before {
             content: "";
             position: absolute;
@@ -42,6 +73,7 @@
             background: url('assets/img/home1/banner/banner-1.jpg') center/cover no-repeat;
             opacity: 0.12;
         }
+
         .comm-hero::after {
             content: "";
             position: absolute;
@@ -50,15 +82,35 @@
             opacity: 0.4;
             pointer-events: none;
         }
+
         .hero-ring {
             position: absolute;
             border-radius: 50%;
-            border: 1px solid rgba(191,154,114,0.08);
+            border: 1px solid rgba(158, 139, 90, 0.08);
             pointer-events: none;
         }
-        .hero-ring-1 { width: 500px; height: 500px; top: -180px; left: -180px; }
-        .hero-ring-2 { width: 700px; height: 700px; top: -280px; left: -280px; }
-        .hero-ring-3 { width: 420px; height: 420px; bottom: -160px; right: -160px; border-color: rgba(207,225,185,0.06); }
+
+        .hero-ring-1 {
+            width: 500px;
+            height: 500px;
+            top: -180px;
+            left: -180px;
+        }
+
+        .hero-ring-2 {
+            width: 700px;
+            height: 700px;
+            top: -280px;
+            left: -280px;
+        }
+
+        .hero-ring-3 {
+            width: 420px;
+            height: 420px;
+            bottom: -160px;
+            right: -160px;
+            border-color: rgba(194, 214, 206, 0.06);
+        }
 
         .comm-hero-inner {
             position: relative;
@@ -68,28 +120,49 @@
             max-width: 820px;
             margin: 0 auto;
         }
+
         .comm-hero-inner .dancing-label {
             font-family: var(--font-dancing);
             font-size: 26px;
-            color: var(--primary-color1);
+            color: var(--theme-gold);
             display: block;
             margin-bottom: 18px;
             line-height: 1;
         }
+
         .comm-hero-inner h1 {
             font-family: var(--font-marcellus);
             font-size: 66px;
             line-height: 1.12;
-            color: #fff;
+            color: var(--theme-white);
             margin-bottom: 26px;
         }
+
         .comm-hero-inner p {
             font-family: var(--font-dmsans);
             font-size: 19px;
-            color: rgba(255,255,255,0.72);
+            color: rgba(255, 255, 255, 0.72);
             line-height: 34px;
             max-width: 620px;
             margin: 0 auto 48px;
+        }
+
+        .comm-hero-inner .primary-btn1 {
+            border: 2px solid var(--theme-gold) !important;
+            background-color: transparent !important;
+            transition: var(--transition-smooth) !important;
+        }
+
+        .comm-hero-inner .primary-btn1 span {
+            background-color: var(--theme-gold) !important;
+        }
+
+        .comm-hero-inner .primary-btn1:hover {
+            color: var(--theme-green) !important;
+        }
+
+        .comm-hero-inner .primary-btn1:hover svg path {
+            stroke: var(--theme-green) !important;
         }
 
         /* Hero stat strip */
@@ -99,29 +172,35 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            border-top: 1px solid rgba(255,255,255,0.08);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
             width: 100%;
             max-width: 900px;
             margin: 0 auto;
         }
+
         .hero-stat {
             padding: 32px 48px;
-            border-right: 1px solid rgba(255,255,255,0.1);
+            border-right: 1px solid rgba(255, 255, 255, 0.08);
             text-align: center;
             flex: 1;
         }
-        .hero-stat:last-child { border-right: none; }
+
+        .hero-stat:last-child {
+            border-right: none;
+        }
+
         .hero-stat .stat-num {
             font-family: var(--font-marcellus);
             font-size: 42px;
-            color: var(--primary-color1);
+            color: var(--theme-gold);
             line-height: 1;
             display: block;
         }
+
         .hero-stat .stat-lbl {
             font-family: var(--font-dmsans);
-            font-size: 12px;
-            color: rgba(255,255,255,0.5);
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.5);
             letter-spacing: 1.5px;
             text-transform: uppercase;
             display: block;
@@ -140,265 +219,516 @@
             align-items: center;
             gap: 8px;
         }
+
         .scroll-hint span {
             font-family: var(--font-dmsans);
             font-size: 11px;
-            color: rgba(255,255,255,0.3);
+            color: rgba(255, 255, 255, 0.3);
             letter-spacing: 3px;
             text-transform: uppercase;
         }
+
         .scroll-line {
             width: 1px;
             height: 44px;
-            background: linear-gradient(to bottom, var(--primary-color1), transparent);
+            background: linear-gradient(to bottom, var(--theme-gold), transparent);
             animation: scrollPulse 2s ease-in-out infinite;
         }
+
         @keyframes scrollPulse {
-            0%,100% { opacity:0.2; }
-            50%      { opacity:1; }
+
+            0%,
+            100% {
+                opacity: 0.2;
+            }
+
+            50% {
+                opacity: 1;
+            }
         }
 
         /* ── Section title shared ──────────────────────────── */
-        .section-title { margin-bottom: 60px; }
+        .section-title {
+            margin-bottom: 60px;
+        }
+
         .section-title span {
             font-family: var(--font-dancing);
             font-size: 24px;
-            color: var(--primary-color1);
+            color: var(--theme-gold);
             display: block;
             margin-bottom: 14px;
             line-height: 1;
         }
+
         .section-title h2 {
             font-family: var(--font-marcellus);
             font-size: 42px;
-            color: var(--title-color);
+            color: var(--theme-green);
             line-height: 1.25;
             margin-bottom: 18px;
         }
+
         .section-title p {
             font-family: var(--font-dmsans);
             font-size: 17px;
-            color: var(--text-color);
+            color: var(--theme-text-dark);
             line-height: 30px;
             max-width: 580px;
         }
-        .section-title.centered { text-align: center; }
-        .section-title.centered p { margin: 0 auto; }
-        .section-title.white-title span { color: var(--primary-color1); }
-        .section-title.white-title h2  { color: #fff; }
-        .section-title.white-title p   { color: rgba(255,255,255,0.62); }
+
+        .section-title.centered {
+            text-align: center;
+        }
+
+        .section-title.centered p {
+            margin: 0 auto;
+        }
+
+        .section-title.white-title span {
+            color: var(--theme-gold);
+        }
+
+        .section-title.white-title h2 {
+            color: var(--theme-white);
+        }
+
+        .section-title.white-title p {
+            color: rgba(255, 255, 255, 0.62);
+        }
 
         /* ── Community Pillars ─────────────────────────────── */
-        .pillars-section { background: #e9f5db; padding: 110px 0; }
+        .pillars-section {
+            background: var(--theme-cream);
+            padding: 110px 0;
+            border-bottom: 1px solid var(--theme-border);
+        }
+
         .pillar-grid {
             display: grid;
-            grid-template-columns: repeat(3,1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 24px;
             margin-top: 60px;
         }
+
         .pillar-card {
-            background: #fff;
+            background: var(--theme-white);
             padding: 50px 36px 44px;
             position: relative;
             overflow: hidden;
-            transition: transform 0.4s, box-shadow 0.4s;
+            border-radius: 12px;
+            border: 1px solid var(--theme-border);
+            box-shadow: 0 4px 25px rgba(16, 42, 36, 0.02);
+            transition: var(--transition-smooth);
         }
+
         .pillar-card::before {
             content: "";
             position: absolute;
-            top: 0; left: 0;
-            width: 4px; height: 100%;
-            background: var(--primary-color1);
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--theme-gold);
             transform: scaleY(0);
             transform-origin: bottom;
-            transition: transform 0.4s;
+            transition: var(--transition-smooth);
         }
-        .pillar-card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(36,69,57,0.1); }
-        .pillar-card:hover::before { transform: scaleY(1); }
+
+        .pillar-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 60px rgba(16, 42, 36, 0.08);
+            border-color: rgba(158, 139, 90, 0.2);
+        }
+
+        .pillar-card:hover::before {
+            transform: scaleY(1);
+        }
+
         .pillar-card .p-num {
             font-family: var(--font-dmsans);
             font-size: 80px;
             font-weight: 900;
-            color: rgba(66,101,70,0.06);
+            color: rgba(16, 42, 36, 0.06);
             line-height: 1;
             position: absolute;
-            top: 10px; right: 20px;
+            top: 10px;
+            right: 20px;
         }
+
         .pillar-card i {
             font-size: 34px;
-            color: var(--primary-color1);
+            color: var(--theme-gold);
             margin-bottom: 22px;
             display: block;
         }
+
         .pillar-card h4 {
             font-family: var(--font-marcellus);
             font-size: 22px;
-            color: var(--title-color);
+            color: var(--theme-green);
             margin-bottom: 14px;
             line-height: 1.3;
         }
+
         .pillar-card p {
             font-family: var(--font-dmsans);
             font-size: 16px;
-            color: var(--text-color);
+            color: var(--theme-text-dark);
             line-height: 28px;
             margin-bottom: 0;
         }
 
         /* ── Alternating Moments ───────────────────────────── */
-        .comm-moment {
-            display: flex;
-            align-items: stretch;
-            min-height: 580px;
+        /* ── Community Showcase (Option B - Tabbed Showcase) ── */
+        .comm-showcase-section {
+            padding: 120px 0;
+            background: var(--theme-cream);
+            border-bottom: 1px solid var(--theme-border);
+            position: relative;
         }
-        .comm-moment .cm-img-col {
-            flex: 0 0 50%;
+
+        .showcase-tabs {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 24px;
+        }
+
+        .showcase-tab-btn {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: var(--theme-white);
+            border: 1px solid var(--theme-border);
+            border-radius: 8px;
+            padding: 22px 26px;
+            width: 100%;
+            text-align: left;
+            transition: var(--transition-smooth);
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(16, 42, 36, 0.01);
             position: relative;
             overflow: hidden;
         }
-        .comm-moment .cm-img-col img {
+
+        .showcase-tab-btn::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--theme-gold);
+            transform: scaleY(0);
+            transition: var(--transition-smooth);
+        }
+
+        .showcase-tab-btn:hover {
+            transform: translateX(6px);
+            border-color: rgba(158, 139, 90, 0.2);
+            box-shadow: 0 6px 18px rgba(16, 42, 36, 0.03);
+        }
+
+        .showcase-tab-btn.active {
+            border-color: rgba(158, 139, 90, 0.3);
+            box-shadow: 0 8px 24px rgba(16, 42, 36, 0.06);
+            background: var(--theme-white);
+        }
+
+        .showcase-tab-btn.active::before {
+            transform: scaleY(1);
+        }
+
+        .showcase-tab-btn .tab-num {
+            font-family: var(--font-marcellus);
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--theme-gold);
+            line-height: 1;
+        }
+
+        .showcase-tab-btn .tab-label {
+            font-family: var(--font-marcellus);
+            font-size: 17px;
+            font-weight: 500;
+            color: var(--theme-green);
+            line-height: 1.2;
+        }
+
+        .showcase-content-wrapper {
+            background: var(--theme-white);
+            border: 1px solid var(--theme-border);
+            border-radius: 16px;
+            padding: 48px;
+            box-shadow: 0 10px 40px rgba(16, 42, 36, 0.02);
+            min-height: 520px;
+            display: flex;
+            align-items: center;
+        }
+
+        .showcase-panel {
+            display: none;
+            width: 100%;
+        }
+
+        .showcase-panel.active {
+            display: block;
+            animation: showcaseFadeIn 0.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        }
+
+        @keyframes showcaseFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .showcase-img-wrap {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(16, 42, 36, 0.06);
+            box-shadow: 0 10px 30px rgba(16, 42, 36, 0.04);
+            aspect-ratio: 4/3;
+        }
+
+        .showcase-img-wrap img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            min-height: 580px;
-            transition: transform 0.9s ease;
+            transition: var(--transition-smooth);
             display: block;
         }
-        .comm-moment:hover .cm-img-col img { transform: scale(1.05); }
-        .cm-overlay {
+
+        .showcase-panel:hover .showcase-img-wrap img {
+            transform: scale(1.04);
+        }
+
+        .cat-badge {
             position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(36,69,57,0.78) 0%, transparent 55%);
-            display: flex;
-            align-items: flex-end;
-            padding: 44px 40px;
-            z-index: 2;
+            bottom: 24px;
+            left: 24px;
+            background: var(--theme-gold);
+            color: var(--theme-white);
+            font-family: var(--font-dmsans);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            padding: 8px 18px;
+            text-transform: uppercase;
+            z-index: 3;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
         }
-        .cm-overlay blockquote {
-            font-family: var(--font-dancing);
-            font-size: 24px;
-            color: rgba(255,255,255,0.9);
-            margin: 0;
-            line-height: 1.4;
-            max-width: 320px;
+
+        .showcase-text-wrap {
+            padding-left: 20px;
         }
-        .comm-moment .cm-content-col {
-            flex: 0 0 50%;
-            background-color: #e9f5db;
+
+        .m-title-wrap {
             display: flex;
             align-items: center;
-            padding: 70px 80px;
+            gap: 14px;
         }
-        .comm-moment.rev .cm-img-col { order: 2; }
-        .comm-moment.rev .cm-content-col { order: 1; background-color: #cfe1b9; }
-        .cm-num {
-            font-family: var(--font-dmsans);
-            font-size: 100px;
-            font-weight: 900;
-            color: rgba(66,101,70,0.07);
-            line-height: 1;
-            margin-bottom: -30px;
-            display: block;
-        }
-        .cm-inner .dancing-sm {
-            font-family: var(--font-dancing);
-            font-size: 22px;
-            color: var(--primary-color1);
-            display: block;
-            margin-bottom: 12px;
-        }
-        .cm-inner h2 {
+
+        .m-serif-num {
             font-family: var(--font-marcellus);
-            font-size: 36px;
-            color: var(--title-color);
-            line-height: 1.28;
-            margin-bottom: 18px;
-        }
-        .cm-inner p {
-            font-family: var(--font-dmsans);
-            font-size: 17px;
-            line-height: 30px;
-            color: var(--text-color);
-            margin-bottom: 28px;
-        }
-        .cm-list { list-style: none; padding: 0; margin: 0; }
-        .cm-list li {
-            display: flex;
-            align-items: flex-start;
-            gap: 13px;
-            margin-bottom: 13px;
-            font-family: var(--font-dmsans);
-            font-size: 16px;
-            color: var(--title-color);
+            font-size: 24px;
+            color: var(--theme-gold);
             font-weight: 500;
-            line-height: 1.5;
+            letter-spacing: 1px;
         }
-        .cm-dot {
-            width: 7px; height: 7px; min-width: 7px;
-            background: var(--primary-color1);
+
+        .m-quote-callout {
+            border-left: 2px solid var(--theme-gold);
+            padding-left: 20px;
+            margin-top: 28px;
+            font-family: var(--font-marcellus);
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--theme-gold);
+            font-style: italic;
+        }
+
+        .m-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .m-list li {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 12px;
+            font-family: var(--font-dmsans);
+            font-size: 14.5px;
+            color: var(--theme-green);
+            font-weight: 500;
+            line-height: 1.4;
+            transition: var(--transition-smooth);
+        }
+
+        .m-list li:hover {
+            transform: translateX(6px);
+        }
+
+        .m-list li .m-dot {
+            width: 7px;
+            height: 7px;
             border-radius: 50%;
-            margin-top: 8px;
+            background: transparent;
+            border: 2px solid var(--theme-gold);
+            display: inline-block;
+            flex-shrink: 0;
+            transition: var(--transition-smooth);
+        }
+
+        .m-list li:hover .m-dot {
+            background: var(--theme-gold);
+            box-shadow: 0 0 8px rgba(158, 139, 90, 0.6);
+        }
+
+        @media (max-width: 991px) {
+            .showcase-tabs {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+
+            .showcase-tab-btn {
+                flex: 1 1 calc(50% - 12px);
+                padding: 18px 22px;
+            }
+
+            .showcase-tab-btn::before {
+                left: 0;
+                top: auto;
+                bottom: 0;
+                right: 0;
+                width: 100%;
+                height: 3px;
+                transform: scaleX(0);
+                transform-origin: left;
+            }
+
+            .showcase-tab-btn.active::before {
+                transform: scaleX(1);
+            }
+
+            .showcase-tab-btn:hover {
+                transform: translateY(-2px);
+            }
+
+            .showcase-content-wrapper {
+                padding: 32px;
+                min-height: auto;
+            }
+
+            .showcase-text-wrap {
+                padding-left: 0;
+                margin-top: 24px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .comm-showcase-section {
+                padding: 80px 0;
+            }
+
+            .showcase-content-wrapper {
+                padding: 24px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .showcase-tab-btn {
+                flex: 1 1 100%;
+            }
         }
 
         /* ── Facilities Grid ───────────────────────────────── */
         .facilities-section {
-            background: #244539;
+            background: var(--theme-green);
             padding: 110px 0;
             position: relative;
             overflow: hidden;
         }
+
         .facilities-section::before {
             content: "";
             position: absolute;
-            width: 700px; height: 700px;
-            background: radial-gradient(circle, rgba(191,154,114,0.06) 0%, transparent 70%);
-            top: -200px; right: -200px;
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(158, 139, 90, 0.06) 0%, transparent 70%);
+            top: -200px;
+            right: -200px;
             border-radius: 50%;
             pointer-events: none;
         }
+
         .fac-grid {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
             gap: 16px;
             margin-top: 60px;
         }
+
         .fac-card {
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.08);
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 8px;
             padding: 36px 20px;
             text-align: center;
-            transition: all 0.4s;
+            transition: var(--transition-smooth);
         }
+
         .fac-card:hover {
-            background: rgba(191,154,114,0.1);
-            border-color: rgba(191,154,114,0.35);
+            background: rgba(158, 139, 90, 0.08);
+            border-color: rgba(158, 139, 90, 0.3);
             transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
         }
+
         .fac-card i {
             font-size: 32px;
-            color: var(--primary-color1);
+            color: var(--theme-gold);
             margin-bottom: 16px;
             display: block;
-            transition: transform 0.4s;
+            transition: var(--transition-smooth);
         }
-        .fac-card:hover i { transform: scale(1.15); }
+
+        .fac-card:hover i {
+            transform: scale(1.15);
+        }
+
         .fac-card h5 {
             font-family: var(--font-marcellus);
             font-size: 15px;
-            color: #fff;
+            color: var(--theme-white);
             margin-bottom: 8px;
             line-height: 1.3;
         }
+
         .fac-card p {
             font-family: var(--font-dmsans);
             font-size: 13px;
-            color: rgba(255,255,255,0.5);
+            color: rgba(255, 255, 255, 0.5);
             margin-bottom: 0;
             line-height: 20px;
         }
 
         /* ── Events & Rhythm ───────────────────────────────── */
-        .events-section { background: #e9f5db; padding: 110px 0; }
+        .events-section {
+            background: var(--theme-sage);
+            padding: 110px 0;
+            border-bottom: 1px solid var(--theme-border);
+        }
+
         .events-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -406,17 +736,30 @@
             margin-top: 60px;
             align-items: start;
         }
-        .event-list { display: flex; flex-direction: column; gap: 16px; }
+
+        .event-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
         .event-item {
-            background: #fff;
+            background: var(--theme-white);
             display: flex;
             align-items: stretch;
             overflow: hidden;
-            transition: transform 0.35s, box-shadow 0.35s;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(16, 42, 36, 0.02);
+            transition: var(--transition-smooth);
         }
-        .event-item:hover { transform: translateY(-4px); box-shadow: 0 16px 50px rgba(36,69,57,0.09); }
+
+        .event-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 40px rgba(16, 42, 36, 0.06);
+        }
+
         .event-date-box {
-            background: #244539;
+            background: var(--theme-green);
             min-width: 80px;
             display: flex;
             flex-direction: column;
@@ -424,231 +767,264 @@
             justify-content: center;
             padding: 18px 12px;
         }
+
         .event-date-box .ev-day {
             font-family: var(--font-marcellus);
             font-size: 28px;
-            color: var(--primary-color1);
+            color: var(--theme-gold);
             line-height: 1;
         }
+
         .event-date-box .ev-mon {
             font-family: var(--font-dmsans);
             font-size: 11px;
             font-weight: 700;
-            color: rgba(255,255,255,0.6);
+            color: rgba(255, 255, 255, 0.6);
             letter-spacing: 1.5px;
             text-transform: uppercase;
             margin-top: 4px;
         }
-        .event-body { padding: 18px 22px; display: flex; flex-direction: column; justify-content: center; }
+
+        .event-body {
+            padding: 18px 22px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
         .event-body .ev-tag {
             font-family: var(--font-dmsans);
             font-size: 11px;
             font-weight: 700;
-            color: var(--primary-color1);
+            color: var(--theme-gold);
             letter-spacing: 1.5px;
             text-transform: uppercase;
             margin-bottom: 5px;
         }
+
         .event-body h5 {
             font-family: var(--font-marcellus);
             font-size: 17px;
-            color: var(--title-color);
+            color: var(--theme-green);
             margin-bottom: 5px;
             line-height: 1.3;
         }
+
         .event-body p {
             font-family: var(--font-dmsans);
             font-size: 13px;
-            color: var(--text-color);
+            color: var(--theme-text-dark);
             margin-bottom: 0;
             line-height: 20px;
         }
+
         .month-card {
-            background: #244539;
+            background: var(--theme-green);
             padding: 48px 44px;
+            border-radius: 12px;
+            box-shadow: 0 12px 35px rgba(16, 42, 36, 0.08);
         }
+
         .month-card .mc-eyebrow {
             font-family: var(--font-dancing);
             font-size: 22px;
-            color: var(--primary-color1);
+            color: var(--theme-gold);
             display: block;
             margin-bottom: 14px;
         }
+
         .month-card h3 {
             font-family: var(--font-marcellus);
             font-size: 28px;
-            color: #fff;
+            color: var(--theme-white);
             line-height: 1.3;
             margin-bottom: 28px;
         }
+
         .mc-activity {
             display: flex;
             align-items: flex-start;
             gap: 16px;
             padding: 16px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.07);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
         }
-        .mc-activity:last-of-type { border-bottom: none; }
+
+        .mc-activity:last-of-type {
+            border-bottom: none;
+        }
+
         .mc-icon {
-            width: 44px; height: 44px; min-width: 44px;
-            background: rgba(191,154,114,0.15);
+            width: 44px;
+            height: 44px;
+            min-width: 44px;
+            background: rgba(158, 139, 90, 0.15);
             border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        .mc-icon i { font-size: 18px; color: var(--primary-color1); }
+
+        .mc-icon i {
+            font-size: 18px;
+            color: var(--theme-gold);
+        }
+
         .mc-text h6 {
             font-family: var(--font-dmsans);
             font-size: 15px;
             font-weight: 700;
-            color: #fff;
+            color: var(--theme-white);
             margin-bottom: 4px;
         }
+
         .mc-text p {
             font-family: var(--font-dmsans);
             font-size: 13px;
-            color: rgba(255,255,255,0.52);
+            color: rgba(255, 255, 255, 0.52);
             margin-bottom: 0;
             line-height: 20px;
         }
 
         /* ── Testimonials ──────────────────────────────────── */
-        .comm-testimonials { background: #cfe1b9; padding: 110px 0; }
-        .testi-card {
-            background: #fff;
-            padding: 44px 38px;
+        .comm-testimonials {
+            background: var(--theme-cream);
+            padding: 110px 0;
+            border-bottom: 1px solid var(--theme-border);
         }
+
+        .testi-card {
+            background: var(--theme-white);
+            padding: 44px 38px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(16, 42, 36, 0.03);
+            border: 1px solid var(--theme-border);
+        }
+
         .testi-card .quote-mark {
             font-family: var(--font-marcellus);
             font-size: 72px;
-            color: var(--primary-color1);
+            color: var(--theme-gold);
             line-height: 0.6;
             display: block;
             margin-bottom: 22px;
             opacity: 0.6;
         }
+
         .testi-card p {
             font-family: var(--font-dmsans);
             font-size: 16px;
-            color: var(--text-color);
+            color: var(--theme-text-dark);
             line-height: 28px;
             margin-bottom: 32px;
             font-style: italic;
         }
-        .testi-author { display: flex; align-items: center; gap: 16px; }
-        .testi-avatar {
-            width: 52px; height: 52px;
-            border-radius: 50%;
-            background: #cfe1b9;
-            border: 2px solid var(--primary-color1);
-            display: flex; align-items: center; justify-content: center;
+
+        .testi-author {
+            display: flex;
+            align-items: center;
+            gap: 16px;
         }
-        .testi-avatar i { font-size: 24px; color: #426546; }
+
+        .testi-avatar {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: var(--theme-sage);
+            border: 2px solid var(--theme-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .testi-avatar i {
+            font-size: 24px;
+            color: var(--theme-green);
+        }
+
         .testi-info h6 {
             font-family: var(--font-marcellus);
             font-size: 17px;
-            color: var(--title-color);
+            color: var(--theme-green);
             margin-bottom: 3px;
         }
+
         .testi-info span {
             font-family: var(--font-dmsans);
             font-size: 13px;
-            color: var(--text-color);
+            color: var(--theme-text-dark);
         }
+
         .testi-nav {
             display: flex;
             gap: 12px;
             margin-top: 40px;
             justify-content: center;
         }
+
         .testi-nav button {
-            width: 48px; height: 48px;
-            border: 2px solid #244539;
+            width: 48px;
+            height: 48px;
+            border: 2px solid var(--theme-green);
             background: transparent;
             border-radius: 50%;
             cursor: pointer;
-            display: flex; align-items: center; justify-content: center;
-            transition: all 0.3s;
-            color: #244539;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition-smooth);
+            color: var(--theme-green);
             font-size: 16px;
         }
-        .testi-nav button:hover { background: #244539; color: #fff; }
 
-        /* ── Family Section ────────────────────────────────── */
-        .family-section {
-            background: #244539;
-            padding: 110px 0;
-            position: relative;
-            overflow: hidden;
-        }
-        .family-section::before {
-            content: "";
-            position: absolute;
-            width: 600px; height: 600px;
-            background: radial-gradient(circle, rgba(191,154,114,0.07) 0%, transparent 70%);
-            bottom: -200px; left: -150px;
-            border-radius: 50%;
-            pointer-events: none;
-        }
-        .family-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
-            margin-top: 60px;
-        }
-        .fam-card {
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.09);
-            padding: 40px 32px;
-            transition: all 0.4s;
-        }
-        .fam-card:hover {
-            background: rgba(191,154,114,0.1);
-            border-color: rgba(191,154,114,0.35);
-            transform: translateY(-5px);
-        }
-        .fam-card i { font-size: 32px; color: var(--primary-color1); margin-bottom: 18px; display: block; }
-        .fam-card h5 {
-            font-family: var(--font-marcellus);
-            font-size: 20px; color: #fff;
-            margin-bottom: 12px; line-height: 1.35;
-        }
-        .fam-card p {
-            font-family: var(--font-dmsans);
-            font-size: 15px; color: rgba(255,255,255,0.58);
-            margin-bottom: 0; line-height: 26px;
+        .testi-nav button:hover {
+            background: var(--theme-green);
+            color: var(--theme-white);
         }
 
         /* ── CTA ───────────────────────────────────────────── */
         .comm-cta {
-            background: #cfe1b9;
+            background: var(--theme-green);
             padding: 130px 0;
             text-align: center;
             position: relative;
             overflow: hidden;
         }
+
         .comm-cta::after {
             content: "";
             position: absolute;
-            bottom: 0; left: 0; right: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
             height: 3px;
-            background: linear-gradient(to right, transparent, var(--primary-color1), transparent);
+            background: linear-gradient(to right, transparent, var(--theme-gold), transparent);
         }
+
         .comm-cta .dancing-label {
             font-family: var(--font-dancing);
-            font-size: 26px; color: #426546;
-            display: block; margin-bottom: 16px;
+            font-size: 26px;
+            color: var(--theme-gold);
+            display: block;
+            margin-bottom: 16px;
         }
+
         .comm-cta h2 {
             font-family: var(--font-marcellus);
-            font-size: 52px; color: #244539;
-            line-height: 1.22; margin-bottom: 20px;
+            font-size: 52px;
+            color: var(--theme-white);
+            line-height: 1.22;
+            margin-bottom: 20px;
         }
+
         .comm-cta p {
             font-family: var(--font-dmsans);
-            font-size: 19px; color: var(--text-color);
+            font-size: 19px;
+            color: rgba(255, 255, 255, 0.7);
             line-height: 33px;
-            max-width: 560px; margin: 0 auto 48px;
+            max-width: 560px;
+            margin: 0 auto 48px;
         }
+
         .cta-btn-pair {
             display: flex;
             align-items: center;
@@ -656,89 +1032,206 @@
             gap: 20px;
             flex-wrap: wrap;
         }
+
         .btn-outline-forest {
             font-family: var(--font-dmsans);
-            font-size: 16px; font-weight: 600;
+            font-size: 16px;
+            font-weight: 600;
             padding: 18px 32px;
-            border: 2px solid #244539;
-            color: #244539; background: transparent;
-            display: inline-flex; align-items: center; gap: 8px;
-            line-height: 1; text-decoration: none;
-            position: relative; overflow: hidden;
-            z-index: 1; transition: color 0.5s;
+            border: 2px solid var(--theme-gold);
+            color: var(--theme-gold);
+            background: transparent;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            line-height: 1;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            transition: var(--transition-smooth);
             white-space: nowrap;
         }
+
         .btn-outline-forest span {
             position: absolute;
-            display: block; width: 0; height: 0;
-            background: #244539;
+            display: block;
+            width: 0;
+            height: 0;
+            background: var(--theme-gold);
             transition: all 0.6s;
-            transform: translate(-50%,-50%);
+            transform: translate(-50%, -50%);
             z-index: -1;
         }
-        .btn-outline-forest:hover { color: #fff; }
-        .btn-outline-forest:hover span { width: 225%; height: 1000px; }
+
+        .btn-outline-forest:hover {
+            color: var(--theme-white);
+        }
+
+        .btn-outline-forest:hover span {
+            width: 225%;
+            height: 1000px;
+        }
 
         /* ── Responsive ────────────────────────────────────── */
         @media (max-width: 1399px) {
-            .comm-hero-inner h1 { font-size: 56px; }
-            .comm-moment .cm-content-col { padding: 60px 52px; }
-            .fac-grid { grid-template-columns: repeat(4,1fr); }
-            .comm-cta h2 { font-size: 44px; }
+            .comm-hero-inner h1 {
+                font-size: 56px;
+            }
+
+            .m-content-wrapper {
+                padding: 20px;
+            }
+
+            .fac-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .comm-cta h2 {
+                font-size: 44px;
+            }
         }
+
         @media (max-width: 1199px) {
-            .comm-hero-inner h1 { font-size: 46px; }
-            .hero-stat { padding: 24px 28px; }
-            .hero-stat .stat-num { font-size: 34px; }
-            .cm-inner h2 { font-size: 28px; }
-            .comm-moment .cm-content-col { padding: 50px 40px; }
-            .fac-grid { grid-template-columns: repeat(3,1fr); }
-            .month-card { padding: 38px 28px; }
-            .section-title h2 { font-size: 34px; }
+            .comm-hero-inner h1 {
+                font-size: 46px;
+            }
+
+            .hero-stat {
+                padding: 24px 28px;
+            }
+
+            .hero-stat .stat-num {
+                font-size: 34px;
+            }
+
+            .cm-inner h2 {
+                font-size: 28px;
+            }
+
+            .m-content-wrapper {
+                padding: 20px 10px;
+            }
+
+            .fac-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .month-card {
+                padding: 38px 28px;
+            }
+
+            .section-title h2 {
+                font-size: 34px;
+            }
         }
+
         @media (max-width: 991px) {
-            .comm-hero-inner h1 { font-size: 38px; }
-            .comm-hero-inner p { font-size: 16px; }
-            .hero-stat { flex: 0 0 50%; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
-            .pillar-grid { grid-template-columns: 1fr 1fr; }
-            .comm-moment { flex-direction: column; min-height: unset; }
-            .comm-moment .cm-img-col,
-            .comm-moment .cm-content-col { flex: unset; width: 100%; }
-            .comm-moment.rev .cm-img-col,
-            .comm-moment.rev .cm-content-col { order: unset; }
-            .comm-moment .cm-img-col img { min-height: 380px; }
-            .comm-moment .cm-content-col { padding: 50px 30px; }
-            .fac-grid { grid-template-columns: repeat(2,1fr); }
-            .events-row { grid-template-columns: 1fr; }
-            .family-row { grid-template-columns: 1fr; }
-            .comm-cta h2 { font-size: 36px; }
+            .comm-hero-inner h1 {
+                font-size: 38px;
+            }
+
+            .comm-hero-inner p {
+                font-size: 16px;
+            }
+
+            .hero-stat {
+                flex: 0 0 50%;
+                border-right: none;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .pillar-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .comm-moment {
+                padding: 80px 0;
+            }
+
+            .m-content-wrapper {
+                padding: 20px 0 0;
+            }
+
+            .fac-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .events-row {
+                grid-template-columns: 1fr;
+            }
+
+            .family-row {
+                grid-template-columns: 1fr;
+            }
+
+            .comm-cta h2 {
+                font-size: 36px;
+            }
         }
+
         @media (max-width: 767px) {
-            .comm-hero-inner h1 { font-size: 32px; }
-            .pillar-grid { grid-template-columns: 1fr; }
-            .cm-inner h2 { font-size: 24px; }
-            .comm-moment .cm-content-col { padding: 40px 20px; }
-            .comm-moment .cm-img-col img { min-height: 300px; }
-            .section-title h2 { font-size: 28px; }
-            .comm-cta h2 { font-size: 28px; }
-            .comm-cta p { font-size: 16px; }
+            .comm-hero-inner h1 {
+                font-size: 32px;
+            }
+
+            .pillar-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cm-inner h2 {
+                font-size: 28px;
+            }
+
+            .section-title h2 {
+                font-size: 28px;
+            }
+
+            .comm-cta h2 {
+                font-size: 28px;
+            }
+
+            .comm-cta p {
+                font-size: 16px;
+            }
         }
+
         @media (max-width: 576px) {
-            .fac-grid { grid-template-columns: 1fr 1fr; }
-            .hero-stat { flex: 0 0 100%; }
-            .cta-btn-pair a { width: 100%; justify-content: center; }
-            .family-row { grid-template-columns: 1fr; }
+            .fac-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .hero-stat {
+                flex: 0 0 100%;
+            }
+
+            .cta-btn-pair a {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .family-row {
+                grid-template-columns: 1fr;
+            }
         }
+
         @media (max-width: 375px) {
-            .comm-hero-inner h1 { font-size: 26px; }
-            .fac-grid { grid-template-columns: 1fr; }
+            .comm-hero-inner h1 {
+                font-size: 26px;
+            }
+
+            .fac-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 
 <body class="tt-magic-cursor bg-color">
 
-    <div id="magic-cursor"><div id="ball"></div></div>
+    <div id="magic-cursor">
+        <div id="ball"></div>
+    </div>
 
     <!-- Back To Top -->
     <div class="progress-wrap">
@@ -746,7 +1239,8 @@
             <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
         </svg>
         <svg class="arrow" width="22" height="25" viewBox="0 0 24 23" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0.556131 11.4439L11.8139 0.186067L13.9214 2.29352L13.9422 20.6852L9.70638 20.7061L9.76793 8.22168L3.6064 14.4941L0.556131 11.4439Z" />
+            <path
+                d="M0.556131 11.4439L11.8139 0.186067L13.9214 2.29352L13.9422 20.6852L9.70638 20.7061L9.76793 8.22168L3.6064 14.4941L0.556131 11.4439Z" />
             <path d="M23.1276 11.4999L16.0288 4.40105L15.9991 10.4203L20.1031 14.5243L23.1276 11.4999Z" />
         </svg>
     </div>
@@ -754,82 +1248,110 @@
     <!-- =====================================================
          HEADER
     ====================================================== -->
-    <header class="header-area style-1 two">
-        <div class="container-fluid d-flex flex-nowrap align-items-center justify-content-between">
-            <div class="logo-and-menu-area">
-                <a href="index.html" class="header-logo">
-                    <img src="assets/img/GREEN GARDENS green.png" alt="Green Gardens" style="width:120px;height:60px;">
-                </a>
-                <div class="main-menu">
-                    <div class="mobile-logo-area d-xl-none d-flex align-items-center justify-content-between">
-                        <a href="index.html" class="mobile-logo-wrap">
-                            <img src="assets/img/home2-header-logo.svg" alt="">
+    <div class="header-offer-topbar-wrap home1-header">
+        <header class="header-area style-1 three">
+            <div class="container-fluid d-flex flex-nowrap align-items-center justify-content-between">
+                <div class="logo-and-menu-area">
+                    <a href="index.html" class="header-logo">
+                        <img src="assets/img/green-gardens-retirement-villas-kerala-logo.png" alt="Green Gardens"
+                            style="width:120px;height:60px;">
+                    </a>
+                    <div class="main-menu">
+                        <div class="mobile-logo-area d-xl-none d-flex align-items-center justify-content-between">
+                            <a href="index.html" class="mobile-logo-wrap" title="Green Gardens Home">
+                                <img src="assets/img/innerpages/Greengardens-logo-mobile.png"
+                                    alt="Green Gardens Senior Living Community Kerala Logo">
+                            </a>
+                            <div class="menu-close-btn"><i class="bi bi-x"></i></div>
+                        </div>
+                        <ul class="menu-list">
+                            <li>
+                                <a href="index.html">Home</a>
+                            </li>
+                            <li>
+                                <a href="story.html">Our Story</a>
+                            </li>
+                            <li class="menu-item-has-children active">
+                                <a href="#" class="drop-down">Life @ Green Gardens <i
+                                        class="bi bi-caret-down-fill"></i></a>
+                                <i class="bi bi-plus dropdown-icon"></i>
+                                <ul class="sub-menu">
+                                    <li><a href="a-day-here.html">A day here</a></li>
+                                    <li><a href="dining and wellness.html">Dining &amp; Wellness</a></li>
+                                    <li class="active"><a href="community-page.html">Community</a></li>
+                                    <li><a href="gallery.html">Gallery</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="#" class="drop-down">Your Home <i class="bi bi-caret-down-fill"></i></a>
+                                <i class="bi bi-plus dropdown-icon"></i>
+                                <ul class="sub-menu">
+                                    <li><a href="the-villas.html">The Villas</a></li>
+                                    <li><a href="customisation.html">Customisation</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="contact.html">Contact Us</a>
+                            </li>
+                        </ul>
+                        <div class="hotline-area two d-xl-none">
+                            <div class="icon">
+                                <svg width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+                                    <g>
+                                        <path
+                                            d="M28.1578 21.1819C28.1081 21.1406 22.4869 17.1413 20.9691 17.3859C20.2369 17.5153 19.8188 18.015 18.9797 19.0144C18.7477 19.2926 18.5105 19.5664 18.2681 19.8356C17.7378 19.6629 17.2205 19.4523 16.7203 19.2056C14.138 17.9484 12.0516 15.862 10.7944 13.2797C10.5477 12.7795 10.3371 12.2622 10.1644 11.7319C10.44 11.4797 10.8263 11.1544 10.9913 11.0156C11.9859 10.1812 12.4847 9.76219 12.6141 9.02906C12.8794 7.51125 8.85938 1.89187 8.81813 1.84125C8.63505 1.58162 8.39662 1.36587 8.12003 1.20958C7.84345 1.05329 7.53561 0.960361 7.21875 0.9375C5.58938 0.9375 0.9375 6.97125 0.9375 7.98844C0.9375 8.0475 1.02281 14.0512 8.42625 21.5822C15.9488 28.9772 21.9525 29.0625 22.0116 29.0625C23.0278 29.0625 29.0625 24.4106 29.0625 22.7812C29.0394 22.4643 28.9463 22.1565 28.7898 21.8799C28.6334 21.6034 28.4175 21.3649 28.1578 21.1819Z" />
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="content">
+                                <span>Inquiry Desk</span>
+                                <h6><a href="tel:+918921234567">+91 9249551740</a></h6>
+                            </div>
+                        </div>
+                        <a class="primary-btn1 two btn-hover d-xl-none" href="contact.html">
+                            Schedule a Visit <span></span>
                         </a>
-                        <div class="menu-close-btn"><i class="bi bi-x"></i></div>
                     </div>
-                    <ul class="menu-list">
-                        <li class="menu-item-has-children">
-                            <a href="index.html" class="drop-down">Home <i class="bi bi-caret-down-fill"></i></a>
-                        </li>
-                        <li class="menu-item-has-children">
-                            <a href="industries-details.html" class="drop-down">Our Story <i class="bi bi-caret-down-fill"></i></a>
-                        </li>
-                        <li class="menu-item-has-children active">
-                            <a href="#" class="drop-down">Life @ Green Gardens <i class="bi bi-caret-down-fill"></i></a>
-                            <i class="bi bi-plus dropdown-icon"></i>
-                            <ul class="sub-menu">
-                                <li><a href="service-style-1.html">A Day Here</a></li>
-                                <li><a href="service-style-2.html">Dining &amp; Wellness</a></li>
-                                <li class="active"><a href="service-style-3.html">Community</a></li>
-                                <li><a href="service-style-4.html">Gallery</a></li>
-                            </ul>
-                        </li>
-                        <li class="menu-item-has-children">
-                            <a href="#" class="drop-down">Your Home <i class="bi bi-caret-down-fill"></i></a>
-                            <i class="bi bi-plus dropdown-icon"></i>
-                            <ul class="sub-menu">
-                                <li><a href="blog-grid.html">The Villas</a></li>
-                                <li><a href="blog-side-bar.html">Customisation</a></li>
-                                <li><a href="blog-standard.html">Why Pala</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                    </ul>
-                    <div class="hotline-area two d-xl-none">
+                </div>
+                <div class="nav-right">
+                    <div class="hotline-area d-xl-flex d-none">
                         <div class="icon">
-                            <svg width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"><g><path d="M28.1578 21.1819C28.1081 21.1406 22.4869 17.1413 20.9691 17.3859C20.2369 17.5153 19.8188 18.015 18.9797 19.0144C18.7477 19.2926 18.5105 19.5664 18.2681 19.8356C17.7378 19.6629 17.2205 19.4523 16.7203 19.2056C14.138 17.9484 12.0516 15.862 10.7944 13.2797C10.5477 12.7795 10.3371 12.2622 10.1644 11.7319C10.44 11.4797 10.8263 11.1544 10.9913 11.0156C11.9859 10.1812 12.4847 9.76219 12.6141 9.02906C12.8794 7.51125 8.85938 1.89187 8.81813 1.84125C8.63505 1.58162 8.39662 1.36587 8.12003 1.20958C7.84345 1.05329 7.53561 0.960361 7.21875 0.9375C5.58938 0.9375 0.9375 6.97125 0.9375 7.98844C0.9375 8.0475 1.02281 14.0512 8.42625 21.5822C15.9488 28.9772 21.9525 29.0625 22.0116 29.0625C23.0278 29.0625 29.0625 24.4106 29.0625 22.7812C29.0394 22.4643 28.9463 22.1565 28.7898 21.8799C28.6334 21.6034 28.4175 21.3649 28.1578 21.1819Z"/></g></svg>
+                            <svg width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+                                <g>
+                                    <path
+                                        d="M28.1578 21.1819C28.1081 21.1406 22.4869 17.1413 20.9691 17.3859C20.2369 17.5153 19.8188 18.015 18.9797 19.0144C18.7477 19.2926 18.5105 19.5664 18.2681 19.8356C17.7378 19.6629 17.2205 19.4523 16.7203 19.2056C14.138 17.9484 12.0516 15.862 10.7944 13.2797C10.5477 12.7795 10.3371 12.2622 10.1644 11.7319C10.44 11.4797 10.8263 11.1544 10.9913 11.0156C11.9859 10.1812 12.4847 9.76219 12.6141 9.02906C12.8794 7.51125 8.85938 1.89187 8.81813 1.84125C8.63505 1.58162 8.39662 1.36587 8.12003 1.20958C7.84345 1.05329 7.53561 0.960361 7.21875 0.9375C5.58938 0.9375 0.9375 6.97125 0.9375 7.98844C0.9375 8.0475 1.02281 14.0512 8.42625 21.5822C15.9488 28.9772 21.9525 29.0625 22.0116 29.0625C23.0278 29.0625 29.0625 24.4106 29.0625 22.7812C29.0394 22.4643 28.9463 22.1565 28.7898 21.8799C28.6334 21.6034 28.4175 21.3649 28.1578 21.1819Z" />
+                                    <path
+                                        d="M26.25 14.0625H28.125C28.1213 10.8313 26.836 7.73354 24.5513 5.44875C22.2665 3.16395 19.1687 1.87872 15.9375 1.875V3.75C18.6716 3.75323 21.2927 4.84075 23.226 6.77402C25.1592 8.70729 26.2468 11.3284 26.25 14.0625Z" />
+                                </g>
+                            </svg>
                         </div>
                         <div class="content">
-                            <span>To More Inquiry</span>
-                            <h6><a href="tel:+919876543210">+91 98765 43210</a></h6>
+                            <span>Inquiry Desk</span>
+                            <h6><a href="tel:+918921234567">+91 9249551740</a></h6>
                         </div>
                     </div>
-                    <a class="primary-btn1 two btn-hover d-xl-none" href="contact.html">Visit Us<span></span></a>
+                    <div class="contact-area">
+                        <a href="contact.html" class="primary-btn1 two btn-hover d-xl-flex d-none">
+                            Schedule a Visit <span></span>
+                        </a>
+                    </div>
+                    <div class="sidebar-button mobile-menu-btn">
+                        <svg width="20" height="18" viewBox="0 0 20 18" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M1.29445 2.8421H10.5237C11.2389 2.8421 11.8182 2.2062 11.8182 1.42105C11.8182 0.635903 11.2389 0 10.5237 0H1.29445C0.579249 0 0 0.635903 0 1.42105C0 2.2062 0.579249 2.8421 1.29445 2.8421Z">
+                            </path>
+                            <path
+                                d="M1.23002 10.421H18.77C19.4496 10.421 20 9.78506 20 8.99991C20 8.21476 19.4496 7.57886 18.77 7.57886H1.23002C0.550421 7.57886 0 8.21476 0 8.99991C0 9.78506 0.550421 10.421 1.23002 10.421Z">
+                            </path>
+                            <path
+                                d="M18.8052 15.1579H10.2858C9.62563 15.1579 9.09094 15.7938 9.09094 16.5789C9.09094 17.3641 9.62563 18 10.2858 18H18.8052C19.4653 18 20 17.3641 20 16.5789C20 15.7938 19.4653 15.1579 18.8052 15.1579Z">
+                            </path>
+                        </svg>
+                    </div>
                 </div>
             </div>
-            <div class="nav-right">
-                <div class="hotline-area d-xl-flex d-none">
-                    <div class="icon">
-                        <svg width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"><g><path d="M28.1578 21.1819C28.1081 21.1406 22.4869 17.1413 20.9691 17.3859C20.2369 17.5153 19.8188 18.015 18.9797 19.0144C18.7477 19.2926 18.5105 19.5664 18.2681 19.8356C17.7378 19.6629 17.2205 19.4523 16.7203 19.2056C14.138 17.9484 12.0516 15.862 10.7944 13.2797C10.5477 12.7795 10.3371 12.2622 10.1644 11.7319C10.44 11.4797 10.8263 11.1544 10.9913 11.0156C11.9859 10.1812 12.4847 9.76219 12.6141 9.02906C12.8794 7.51125 8.85938 1.89187 8.81813 1.84125C8.63505 1.58162 8.39662 1.36587 8.12003 1.20958C7.84345 1.05329 7.53561 0.960361 7.21875 0.9375C5.58938 0.9375 0.9375 6.97125 0.9375 7.98844C0.9375 8.0475 1.02281 14.0512 8.42625 21.5822C15.9488 28.9772 21.9525 29.0625 22.0116 29.0625C23.0278 29.0625 29.0625 24.4106 29.0625 22.7812C29.0394 22.4643 28.9463 22.1565 28.7898 21.8799C28.6334 21.6034 28.4175 21.3649 28.1578 21.1819Z"/><path d="M26.25 14.0625H28.125C28.1213 10.8313 26.836 7.73354 24.5513 5.44875C22.2665 3.16395 19.1687 1.87872 15.9375 1.875V3.75C18.6716 3.75323 21.2927 4.84075 23.226 6.77402C25.1592 8.70729 26.2468 11.3284 26.25 14.0625Z"/></g></svg>
-                    </div>
-                    <div class="content">
-                        <span>To More Inquiry</span>
-                        <h6><a href="tel:+919876543210">+91 98765 43210</a></h6>
-                    </div>
-                </div>
-                <div class="contact-area">
-                    <a href="contact.html" class="primary-btn1 two btn-hover d-xl-flex d-none">Visit Us<span></span></a>
-                </div>
-                <div class="sidebar-button mobile-menu-btn">
-                    <svg width="20" height="18" viewBox="0 0 20 18" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1.29445 2.8421H10.5237C11.2389 2.8421 11.8182 2.2062 11.8182 1.42105C11.8182 0.635903 11.2389 0 10.5237 0H1.29445C0.579249 0 0 0.635903 0 1.42105C0 2.2062 0.579249 2.8421 1.29445 2.8421Z"></path>
-                        <path d="M1.23002 10.421H18.77C19.4496 10.421 20 9.78506 20 8.99991C20 8.21476 19.4496 7.57886 18.77 7.57886H1.23002C0.550421 7.57886 0 8.21476 0 8.99991C0 9.78506 0.550421 10.421 1.23002 10.421Z"></path>
-                        <path d="M18.8052 15.1579H10.2858C9.62563 15.1579 9.09094 15.7938 9.09094 16.5789C9.09094 17.3641 9.62563 18 10.2858 18H18.8052C19.4653 18 20 17.3641 20 16.5789C20 15.7938 19.4653 15.1579 18.8052 15.1579Z"></path>
-                    </svg>
-                </div>
-            </div>
-        </div>
-    </header>
+        </header>
+    </div>
     <!-- Header End -->
 
 
@@ -844,10 +1366,14 @@
         <div class="comm-hero-inner wow fadeInUp" data-wow-duration="1s" data-wow-delay="200ms">
             <span class="dancing-label">Life at Green Gardens</span>
             <h1>You belong here.<br>So does your story.</h1>
-            <p>Green Gardens is more than a place to live — it's a community of people who understand each other, celebrate together, and look out for one another every single day.</p>
+            <p>Green Gardens is more than a place to live , it's a community of people who understand each other,
+                celebrate together, and look out for one another every single day.</p>
             <a href="contact.html" class="primary-btn1 btn-hover">
                 Come Meet Your Neighbours
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7H13M13 7L7 1M13 7L7 13" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M1 7H13M13 7L7 1M13 7L7 13" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
                 <span></span>
             </a>
         </div>
@@ -872,7 +1398,6 @@
         </div>
 
         <div class="scroll-hint">
-            <span>Scroll</span>
             <div class="scroll-line"></div>
         </div>
     </section>
@@ -889,7 +1414,8 @@
                     <div class="section-title wow fadeInLeft" data-wow-duration="1s" data-wow-delay="200ms">
                         <span>What Community Means Here</span>
                         <h2>Three things make Green Gardens feel like home.</h2>
-                        <p>We didn't build a facility. We built a neighbourhood — where people know your name, share your mornings, and celebrate your milestones.</p>
+                        <p>We didn't build a facility. We built a neighbourhood , where people know your name, share
+                            your mornings, and celebrate your milestones.</p>
                     </div>
                 </div>
             </div>
@@ -898,19 +1424,22 @@
                     <span class="p-num">01</span>
                     <i class="bi bi-people-fill"></i>
                     <h4>Belonging</h4>
-                    <p>Every resident is welcomed by name from day one. Morning walks become familiar faces. Meals become conversations. Loneliness doesn't live here.</p>
+                    <p>Every resident is welcomed by name from day one. Morning walks become familiar faces. Meals
+                        become conversations. Loneliness doesn't live here.</p>
                 </div>
                 <div class="pillar-card wow fadeInUp" data-wow-duration="1s" data-wow-delay="300ms">
                     <span class="p-num">02</span>
                     <i class="bi bi-star-fill"></i>
                     <h4>Purpose</h4>
-                    <p>Residents lead yoga classes, organise cultural evenings, tend the community garden. Retirement doesn't mean stopping — it means choosing what matters most.</p>
+                    <p>Residents lead yoga classes, organise cultural evenings, tend the community garden. Retirement
+                        doesn't mean stopping , it means choosing what matters most.</p>
                 </div>
                 <div class="pillar-card wow fadeInUp" data-wow-duration="1s" data-wow-delay="400ms">
                     <span class="p-num">03</span>
                     <i class="bi bi-shield-heart-fill"></i>
                     <h4>Safety in Numbers</h4>
-                    <p>Someone always notices if you haven't come to breakfast. That quiet watchfulness — from staff and neighbours alike — is the deepest kind of care.</p>
+                    <p>Someone always notices if you haven't come to breakfast. That quiet watchfulness , from staff and
+                        neighbours alike , is the deepest kind of care.</p>
                 </div>
             </div>
         </div>
@@ -919,105 +1448,228 @@
 
 
     <!-- =====================================================
-         COMMUNITY LIFE MOMENTS
+         COMMUNITY LIFE SHOWCASE (Option B - Tabbed Showcase)
     ====================================================== -->
+    <section class="comm-showcase-section" id="community-showcase">
+        <div class="container">
+            <div class="row gy-5">
+                <!-- Left Column: Tab Selectors -->
+                <div class="col-lg-4">
+                    <div class="showcase-nav-wrap sticky-lg-top" style="top: 110px; z-index: 10;">
+                        <div class="section-title mb-4">
+                            <span>Life @ Green Gardens</span>
+                            <h2>Our Community</h2>
+                            <p>Select a moment below to see how our residents connect, celebrate, and support one
+                                another.</p>
+                        </div>
+                        <div class="showcase-tabs" role="tablist">
+                            <button class="showcase-tab-btn active" data-tab="showcase-1" role="tab"
+                                aria-selected="true">
+                                <span class="tab-num">01</span>
+                                <span class="tab-label">Shared Mornings</span>
+                            </button>
+                            <button class="showcase-tab-btn" data-tab="showcase-2" role="tab" aria-selected="false">
+                                <span class="tab-num">02</span>
+                                <span class="tab-label">Cultural Celebrations</span>
+                            </button>
+                            <button class="showcase-tab-btn" data-tab="showcase-3" role="tab" aria-selected="false">
+                                <span class="tab-num">03</span>
+                                <span class="tab-label">Hobbies &amp; Interests</span>
+                            </button>
+                            <button class="showcase-tab-btn" data-tab="showcase-4" role="tab" aria-selected="false">
+                                <span class="tab-num">04</span>
+                                <span class="tab-label">Family Connection</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
 
-    <!-- 01 — Shared Mornings -->
-    <section class="comm-moment" id="comm-1">
-        <div class="cm-img-col wow fadeInLeft" data-wow-duration="1.2s" data-wow-delay="100ms">
-            <img src="assets/img/home1/event-1.png" alt="Morning gathering at Green Gardens">
-            <div class="cm-overlay">
-                <blockquote>"The best conversations happen over a cup of chai at 7 in the morning."</blockquote>
-            </div>
-        </div>
-        <div class="cm-content-col">
-            <div class="cm-inner wow fadeInRight" data-wow-duration="1.2s" data-wow-delay="200ms">
-                <span class="cm-num">01</span>
-                <span class="dancing-sm">Shared Mornings</span>
-                <h2>Every morning begins with connection, not solitude.</h2>
-                <p>The clubhouse fills with laughter before 8 AM. Residents gather for chai, newspapers, and the kind of unhurried conversation that city life never permitted. It's become the heartbeat of the community.</p>
-                <ul class="cm-list">
-                    <li><span class="cm-dot"></span>Daily morning gathering in the clubhouse</li>
-                    <li><span class="cm-dot"></span>Newspaper reading circle — Malayalam, English &amp; regional</li>
-                    <li><span class="cm-dot"></span>Garden walk groups — optional, always welcoming</li>
-                    <li><span class="cm-dot"></span>Gentle yoga sessions led by fellow residents</li>
-                </ul>
+                <!-- Right Column: Content Panels -->
+                <div class="col-lg-8">
+                    <div class="showcase-content-wrapper">
+
+                        <!-- Panel 1 -->
+                        <div class="showcase-panel active" id="showcase-1" role="tabpanel">
+                            <div class="row gy-4 align-items-center">
+                                <div class="col-md-6">
+                                    <div class="showcase-img-wrap">
+                                        <img src="assets/img/community/GG shared morning .png"
+                                            alt="Morning gathering at Green Gardens">
+                                        <div class="cat-badge">Shared Mornings</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="showcase-text-wrap">
+                                        <div class="m-title-wrap mb-3">
+                                            <span class="m-serif-num">01.</span>
+                                            <span class="dancing-sm"
+                                                style="font-family:var(--font-dancing); font-size:24px; color:var(--theme-gold);">Shared
+                                                Mornings</span>
+                                        </div>
+                                        <h3 class="mb-3"
+                                            style="font-family:var(--font-marcellus); font-size:26px; color:var(--theme-green); line-height:1.3;">
+                                            Every morning begins with connection, not solitude.</h3>
+                                        <p class="mb-4"
+                                            style="font-size:15px; line-height:1.75; color:var(--theme-text-dark);">The
+                                            clubhouse fills with laughter before 8 AM. Residents gather for chai,
+                                            newspapers, and the kind of unhurried conversation that city life never
+                                            permitted. It's become the heartbeat of the community.</p>
+                                        <ul class="m-list" style="padding-left: 0;">
+                                            <li><span class="m-dot"></span>Daily morning gathering in the clubhouse</li>
+                                            <li><span class="m-dot"></span>Newspaper reading circle , Malayalam, English
+                                                &amp; regional</li>
+                                            <li><span class="m-dot"></span>Garden walk groups , optional, always
+                                                welcoming</li>
+                                            <li><span class="m-dot"></span>Gentle yoga sessions led by fellow residents
+                                            </li>
+                                        </ul>
+                                        <div class="m-quote-callout mt-4">
+                                            <p>"The best conversations happen over a cup of chai at 7 in the morning."
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Panel 2 -->
+                        <div class="showcase-panel" id="showcase-2" role="tabpanel">
+                            <div class="row gy-4 align-items-center">
+                                <div class="col-md-6">
+                                    <div class="showcase-img-wrap">
+                                        <img src="assets/img/home1/wellness.png"
+                                            alt="Cultural evening at Green Gardens">
+                                        <div class="cat-badge">Cultural Celebrations</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="showcase-text-wrap">
+                                        <div class="m-title-wrap mb-3">
+                                            <span class="m-serif-num">02.</span>
+                                            <span class="dancing-sm"
+                                                style="font-family:var(--font-dancing); font-size:24px; color:var(--theme-gold);">Cultural
+                                                Celebrations</span>
+                                        </div>
+                                        <h3 class="mb-3"
+                                            style="font-family:var(--font-marcellus); font-size:26px; color:var(--theme-green); line-height:1.3;">
+                                            Every festival is celebrated the way it should be , together.</h3>
+                                        <p class="mb-4"
+                                            style="font-size:15px; line-height:1.75; color:var(--theme-text-dark);">
+                                            Onam, Christmas, Vishu, Eid , no occasion passes quietly at Green Gardens.
+                                            Our auditorium comes alive with performances, feasts, and the joyful chaos
+                                            of families visiting their parents.</p>
+                                        <ul class="m-list" style="padding-left: 0;">
+                                            <li><span class="m-dot"></span>All major Kerala festivals celebrated on
+                                                campus</li>
+                                            <li><span class="m-dot"></span>Traditional arts , music, dance, storytelling
+                                                evenings</li>
+                                            <li><span class="m-dot"></span>Resident-run cultural committees plan each
+                                                celebration</li>
+                                            <li><span class="m-dot"></span>Families warmly welcomed for all functions
+                                            </li>
+                                        </ul>
+                                        <div class="m-quote-callout mt-4">
+                                            <p>"Our Onam celebration last year had three generations under one roof."
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Panel 3 -->
+                        <div class="showcase-panel" id="showcase-3" role="tabpanel">
+                            <div class="row gy-4 align-items-center">
+                                <div class="col-md-6">
+                                    <div class="showcase-img-wrap">
+                                        <img src="assets/img/community/GG hobbys.png"
+                                            alt="Interest groups at Green Gardens">
+                                        <div class="cat-badge">Hobbies &amp; Interests</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="showcase-text-wrap">
+                                        <div class="m-title-wrap mb-3">
+                                            <span class="m-serif-num">03.</span>
+                                            <span class="dancing-sm"
+                                                style="font-family:var(--font-dancing); font-size:24px; color:var(--theme-gold);">Hobbies
+                                                &amp; Interests</span>
+                                        </div>
+                                        <h3 class="mb-3"
+                                            style="font-family:var(--font-marcellus); font-size:26px; color:var(--theme-green); line-height:1.3;">
+                                            Retirement is the perfect time to rediscover what you love.</h3>
+                                        <p class="mb-4"
+                                            style="font-size:15px; line-height:1.75; color:var(--theme-text-dark);">From
+                                            gardening to chess, from bhajans to book clubs , residents form their own
+                                            interest groups and lead them. The library, indoor sports hall, and
+                                            community garden make space for passions old and new.</p>
+                                        <ul class="m-list" style="padding-left: 0;">
+                                            <li><span class="m-dot"></span>Library with Malayalam, English &amp;
+                                                religious books</li>
+                                            <li><span class="m-dot"></span>Indoor games , chess, carrom, cards, table
+                                                tennis</li>
+                                            <li><span class="m-dot"></span>Community garden , grow your own herbs and
+                                                flowers</li>
+                                            <li><span class="m-dot"></span>Home theatre for weekly movie evenings</li>
+                                        </ul>
+                                        <div class="m-quote-callout mt-4">
+                                            <p>"I started a photography club here. We have twelve members now."</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Panel 4 -->
+                        <div class="showcase-panel" id="showcase-4" role="tabpanel">
+                            <div class="row gy-4 align-items-center">
+                                <div class="col-md-6">
+                                    <div class="showcase-img-wrap">
+                                        <img src="assets/img/community/GG family.png"
+                                            alt="Family time at Green Gardens">
+                                        <div class="cat-badge">Family Connection</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="showcase-text-wrap">
+                                        <div class="m-title-wrap mb-3">
+                                            <span class="m-serif-num">04.</span>
+                                            <span class="dancing-sm"
+                                                style="font-family:var(--font-dancing); font-size:24px; color:var(--theme-gold);">Family
+                                                Connection</span>
+                                        </div>
+                                        <h3 class="mb-3"
+                                            style="font-family:var(--font-marcellus); font-size:26px; color:var(--theme-green); line-height:1.3;">
+                                            Your family visits should feel like a homecoming, not a visit.</h3>
+                                        <p class="mb-4"
+                                            style="font-size:15px; line-height:1.75; color:var(--theme-text-dark);">
+                                            Green Gardens has dedicated guest accommodation, function spaces, and a
+                                            dining hall that expands for family days. When children fly in from abroad,
+                                            they find their parents thriving , and a place they love returning to.</p>
+                                        <ul class="m-list" style="padding-left: 0;">
+                                            <li><span class="m-dot"></span>Guest rooms available for family stays</li>
+                                            <li><span class="m-dot"></span>Function centre for birthdays, anniversaries
+                                                &amp; reunions</li>
+                                            <li><span class="m-dot"></span>Multi-cuisine kitchen for family feast days
+                                            </li>
+                                            <li><span class="m-dot"></span>Swimming pool and recreation area for
+                                                grandchildren</li>
+                                        </ul>
+                                        <div class="m-quote-callout mt-4">
+                                            <p>"My grandchildren ask to come here every school holiday. That tells you
+                                                everything."</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-
-    <!-- 02 — Cultural Life (rev) -->
-    <section class="comm-moment rev" id="comm-2">
-        <div class="cm-img-col wow fadeInRight" data-wow-duration="1.2s" data-wow-delay="100ms">
-            <img src="assets/img/home1/wellness.png" alt="Cultural evening at Green Gardens">
-            <div class="cm-overlay">
-                <blockquote>"Our Onam celebration last year had three generations under one roof."</blockquote>
-            </div>
-        </div>
-        <div class="cm-content-col">
-            <div class="cm-inner wow fadeInLeft" data-wow-duration="1.2s" data-wow-delay="200ms">
-                <span class="cm-num">02</span>
-                <span class="dancing-sm">Cultural Celebrations</span>
-                <h2>Every festival is celebrated the way it should be — together.</h2>
-                <p>Onam, Christmas, Vishu, Eid — no occasion passes quietly at Green Gardens. Our auditorium comes alive with performances, feasts, and the joyful chaos of families visiting their parents.</p>
-                <ul class="cm-list">
-                    <li><span class="cm-dot"></span>All major Kerala festivals celebrated on campus</li>
-                    <li><span class="cm-dot"></span>Traditional arts — music, dance, storytelling evenings</li>
-                    <li><span class="cm-dot"></span>Resident-run cultural committees plan each celebration</li>
-                    <li><span class="cm-dot"></span>Families warmly welcomed for all functions</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- 03 — Hobbies & Interest Groups -->
-    <section class="comm-moment" id="comm-3">
-        <div class="cm-img-col wow fadeInLeft" data-wow-duration="1.2s" data-wow-delay="100ms">
-            <img src="assets/img/home1/dining.png" alt="Interest groups at Green Gardens">
-            <div class="cm-overlay">
-                <blockquote>"I started a photography club here. We have twelve members now."</blockquote>
-            </div>
-        </div>
-        <div class="cm-content-col">
-            <div class="cm-inner wow fadeInRight" data-wow-duration="1.2s" data-wow-delay="200ms">
-                <span class="cm-num">03</span>
-                <span class="dancing-sm">Hobbies &amp; Interest Groups</span>
-                <h2>Retirement is the perfect time to rediscover what you love.</h2>
-                <p>From gardening to chess, from bhajans to book clubs — residents form their own interest groups and lead them. The library, indoor sports hall, and community garden make space for passions old and new.</p>
-                <ul class="cm-list">
-                    <li><span class="cm-dot"></span>Library with Malayalam, English &amp; religious books</li>
-                    <li><span class="cm-dot"></span>Indoor games — chess, carrom, cards, table tennis</li>
-                    <li><span class="cm-dot"></span>Community garden — grow your own herbs and flowers</li>
-                    <li><span class="cm-dot"></span>Home theatre for weekly movie evenings</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- 04 — Family Connection (rev) -->
-    <section class="comm-moment rev" id="comm-4">
-        <div class="cm-img-col wow fadeInRight" data-wow-duration="1.2s" data-wow-delay="100ms">
-            <img src="assets/img/home1/about-img2.png" alt="Family time at Green Gardens">
-            <div class="cm-overlay">
-                <blockquote>"My grandchildren ask to come here every school holiday. That tells you everything."</blockquote>
-            </div>
-        </div>
-        <div class="cm-content-col">
-            <div class="cm-inner wow fadeInLeft" data-wow-duration="1.2s" data-wow-delay="200ms">
-                <span class="cm-num">04</span>
-                <span class="dancing-sm">Family Always Welcome</span>
-                <h2>Your family visits should feel like a homecoming, not a visit.</h2>
-                <p>Green Gardens has dedicated guest accommodation, function spaces, and a dining hall that expands for family days. When children fly in from abroad, they find their parents thriving — and a place they love returning to.</p>
-                <ul class="cm-list">
-                    <li><span class="cm-dot"></span>Guest rooms available for family stays</li>
-                    <li><span class="cm-dot"></span>Function centre for birthdays, anniversaries &amp; reunions</li>
-                    <li><span class="cm-dot"></span>Multi-cuisine kitchen for family feast days</li>
-                    <li><span class="cm-dot"></span>Swimming pool and recreation area for grandchildren</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-    <!-- Moments End -->
+    <!-- Showcase End -->
 
 
     <!-- =====================================================
@@ -1027,10 +1679,12 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-7">
-                    <div class="section-title centered white-title wow fadeInUp" data-wow-duration="1s" data-wow-delay="200ms">
+                    <div class="section-title centered white-title wow fadeInUp" data-wow-duration="1s"
+                        data-wow-delay="200ms">
                         <span>Everything Under One Roof</span>
                         <h2>A complete life. No compromises.</h2>
-                        <p>Every facility at Green Gardens was designed because our residents actually need it — not because it looks impressive on a brochure.</p>
+                        <p>Every facility at Green Gardens was designed because our residents actually need it , not
+                            because it looks impressive on a brochure.</p>
                     </div>
                 </div>
             </div>
@@ -1101,96 +1755,101 @@
                     <div class="section-title wow fadeInLeft" data-wow-duration="1s" data-wow-delay="200ms">
                         <span>Always Something Happening</span>
                         <h2>Life at Green Gardens has a rhythm to it.</h2>
-                        <p>There's always something to look forward to — a celebration next week, a workshop next month, a quiet walk this afternoon. Nothing is mandatory. Everything is inviting.</p>
+                        <p>There's always something to look forward to , a celebration next week, a workshop next month,
+                            a quiet walk this afternoon. Nothing is mandatory. Everything is inviting.</p>
                     </div>
                 </div>
             </div>
-            <div class="events-row">
+            <div class="row gy-5 mt-4">
                 <!-- Upcoming Events -->
-                <div class="event-list wow fadeInLeft" data-wow-duration="1s" data-wow-delay="200ms">
-                    <div class="event-item">
-                        <div class="event-date-box">
-                            <span class="ev-day">14</span>
-                            <span class="ev-mon">Jun</span>
+                <div class="col-lg-6">
+                    <div class="event-list wow fadeInLeft" data-wow-duration="1s" data-wow-delay="200ms">
+                        <div class="event-item">
+                            <div class="event-date-box">
+                                <span class="ev-day">14</span>
+                                <span class="ev-mon">Jun</span>
+                            </div>
+                            <div class="event-body">
+                                <span class="ev-tag">Wellness</span>
+                                <h5>Morning Yoga &amp; Pranayama Session</h5>
+                                <p>Garden pavilion · 6:30 AM · All residents welcome</p>
+                            </div>
                         </div>
-                        <div class="event-body">
-                            <span class="ev-tag">Wellness</span>
-                            <h5>Morning Yoga &amp; Pranayama Session</h5>
-                            <p>Garden pavilion · 6:30 AM · All residents welcome</p>
+                        <div class="event-item">
+                            <div class="event-date-box">
+                                <span class="ev-day">18</span>
+                                <span class="ev-mon">Jun</span>
+                            </div>
+                            <div class="event-body">
+                                <span class="ev-tag">Cultural</span>
+                                <h5>Classical Music Evening , Carnatic Vocal</h5>
+                                <p>Auditorium · 6:00 PM · Families welcome</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="event-item">
-                        <div class="event-date-box">
-                            <span class="ev-day">18</span>
-                            <span class="ev-mon">Jun</span>
+                        <div class="event-item">
+                            <div class="event-date-box">
+                                <span class="ev-day">22</span>
+                                <span class="ev-mon">Jun</span>
+                            </div>
+                            <div class="event-body">
+                                <span class="ev-tag">Health</span>
+                                <h5>Diabetic Care &amp; Nutrition Workshop</h5>
+                                <p>Clubhouse hall · 10:00 AM · Doctor-led session</p>
+                            </div>
                         </div>
-                        <div class="event-body">
-                            <span class="ev-tag">Cultural</span>
-                            <h5>Classical Music Evening — Carnatic Vocal</h5>
-                            <p>Auditorium · 6:00 PM · Families welcome</p>
-                        </div>
-                    </div>
-                    <div class="event-item">
-                        <div class="event-date-box">
-                            <span class="ev-day">22</span>
-                            <span class="ev-mon">Jun</span>
-                        </div>
-                        <div class="event-body">
-                            <span class="ev-tag">Health</span>
-                            <h5>Diabetic Care &amp; Nutrition Workshop</h5>
-                            <p>Clubhouse hall · 10:00 AM · Doctor-led session</p>
-                        </div>
-                    </div>
-                    <div class="event-item">
-                        <div class="event-date-box">
-                            <span class="ev-day">29</span>
-                            <span class="ev-mon">Jun</span>
-                        </div>
-                        <div class="event-body">
-                            <span class="ev-tag">Social</span>
-                            <h5>Monthly Birthday Celebration &amp; Lunch</h5>
-                            <p>Dining hall · 12:00 PM · Celebrate together</p>
+                        <div class="event-item">
+                            <div class="event-date-box">
+                                <span class="ev-day">29</span>
+                                <span class="ev-mon">Jun</span>
+                            </div>
+                            <div class="event-body">
+                                <span class="ev-tag">Social</span>
+                                <h5>Monthly Birthday Celebration &amp; Lunch</h5>
+                                <p>Dining hall · 12:00 PM · Celebrate together</p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Monthly Rhythm Card -->
-                <div class="month-card wow fadeInRight" data-wow-duration="1s" data-wow-delay="300ms">
-                    <span class="mc-eyebrow">Every Single Month</span>
-                    <h3>A calendar full of things to look forward to.</h3>
-                    <div class="mc-activity">
-                        <div class="mc-icon"><i class="bi bi-sun-fill"></i></div>
-                        <div class="mc-text">
-                            <h6>Daily Yoga &amp; Walking Groups</h6>
-                            <p>Morning sessions in the garden, led by trained instructors</p>
+                <div class="col-lg-6">
+                    <div class="month-card wow fadeInRight" data-wow-duration="1s" data-wow-delay="300ms">
+                        <span class="mc-eyebrow">Every Single Month</span>
+                        <h3>A calendar full of things to look forward to.</h3>
+                        <div class="mc-activity">
+                            <div class="mc-icon"><i class="bi bi-sun-fill"></i></div>
+                            <div class="mc-text">
+                                <h6>Daily Yoga &amp; Walking Groups</h6>
+                                <p>Morning sessions in the garden, led by trained instructors</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="mc-activity">
-                        <div class="mc-icon"><i class="bi bi-music-note-beamed"></i></div>
-                        <div class="mc-text">
-                            <h6>Weekly Cultural Evenings</h6>
-                            <p>Music, film screenings, bhajans, and storytelling nights</p>
+                        <div class="mc-activity">
+                            <div class="mc-icon"><i class="bi bi-music-note-beamed"></i></div>
+                            <div class="mc-text">
+                                <h6>Weekly Cultural Evenings</h6>
+                                <p>Music, film screenings, bhajans, and storytelling nights</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="mc-activity">
-                        <div class="mc-icon"><i class="bi bi-heart-pulse-fill"></i></div>
-                        <div class="mc-text">
-                            <h6>Monthly Doctor Camps</h6>
-                            <p>General health reviews, specialist visits &amp; health talks</p>
+                        <div class="mc-activity">
+                            <div class="mc-icon"><i class="bi bi-heart-pulse-fill"></i></div>
+                            <div class="mc-text">
+                                <h6>Monthly Doctor Camps</h6>
+                                <p>General health reviews, specialist visits &amp; health talks</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="mc-activity">
-                        <div class="mc-icon"><i class="bi bi-geo-alt-fill"></i></div>
-                        <div class="mc-text">
-                            <h6>Outings &amp; Local Tours</h6>
-                            <p>Pilgrimages, nature trips, temples, and market visits</p>
+                        <div class="mc-activity">
+                            <div class="mc-icon"><i class="bi bi-geo-alt-fill"></i></div>
+                            <div class="mc-text">
+                                <h6>Outings &amp; Local Tours</h6>
+                                <p>Pilgrimages, nature trips, temples, and market visits</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="mc-activity">
-                        <div class="mc-icon"><i class="bi bi-balloon-heart-fill"></i></div>
-                        <div class="mc-text">
-                            <h6>Birthday &amp; Anniversary Celebrations</h6>
-                            <p>Every milestone acknowledged with the whole community</p>
+                        <div class="mc-activity">
+                            <div class="mc-icon"><i class="bi bi-balloon-heart-fill"></i></div>
+                            <div class="mc-text">
+                                <h6>Birthday &amp; Anniversary Celebrations</h6>
+                                <p>Every milestone acknowledged with the whole community</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1203,7 +1862,7 @@
     <!-- =====================================================
          TESTIMONIALS
     ====================================================== -->
-    <section class="comm-testimonials">
+    <!-- <section class="comm-testimonials">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-7">
@@ -1218,7 +1877,9 @@
                     <div class="swiper-slide">
                         <div class="testi-card">
                             <span class="quote-mark">"</span>
-                            <p>I was hesitant to leave my own house. But the first week here, three different residents knocked on my door to welcome me. I've never felt more at home — and I've lived in this country my whole life.</p>
+                            <p>I was hesitant to leave my own house. But the first week here, three different residents
+                                knocked on my door to welcome me. I've never felt more at home , and I've lived in this
+                                country my whole life.</p>
                             <div class="testi-author">
                                 <div class="testi-avatar"><i class="bi bi-person-fill"></i></div>
                                 <div class="testi-info">
@@ -1231,7 +1892,9 @@
                     <div class="swiper-slide">
                         <div class="testi-card">
                             <span class="quote-mark">"</span>
-                            <p>My parents moved here after I relocated to Australia. I used to worry every night. Now I worry about whether they'll want to visit me — they're busier than I am. The community took them in completely.</p>
+                            <p>My parents moved here after I relocated to Australia. I used to worry every night. Now I
+                                worry about whether they'll want to visit me , they're busier than I am. The community
+                                took them in completely.</p>
                             <div class="testi-author">
                                 <div class="testi-avatar"><i class="bi bi-person-fill"></i></div>
                                 <div class="testi-info">
@@ -1244,7 +1907,9 @@
                     <div class="swiper-slide">
                         <div class="testi-card">
                             <span class="quote-mark">"</span>
-                            <p>I started a bhajan group here — just four of us initially. Now we have fourteen people every Thursday evening. I never imagined I'd find this kind of purpose and friendship at seventy-eight.</p>
+                            <p>I started a bhajan group here , just four of us initially. Now we have fourteen people
+                                every Thursday evening. I never imagined I'd find this kind of purpose and friendship at
+                                seventy-eight.</p>
                             <div class="testi-author">
                                 <div class="testi-avatar"><i class="bi bi-person-fill"></i></div>
                                 <div class="testi-info">
@@ -1261,48 +1926,111 @@
                 <button class="home1-testimonial-slider-next"><i class="bi bi-arrow-right"></i></button>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- Testimonials End -->
 
 
     <!-- =====================================================
          FAMILY / NRI SECTION
     ====================================================== -->
-    <section class="family-section">
+    <!-- <section class="family-section">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-7">
-                    <div class="section-title centered white-title wow fadeInUp" data-wow-duration="1s" data-wow-delay="200ms">
-                        <span>For NRI Families</span>
-                        <h2>Your peace of mind is part of our community too.</h2>
-                        <p>We understand the weight of knowing your parents are far away. Green Gardens was built precisely for this — so you can be abroad without feeling absent.</p>
+                <div class="col-lg-8 col-md-10">
+                    <div class="section-title text-center wow animate fadeInDown" data-wow-delay="200ms"
+                        data-wow-duration="1500ms">
+                        <span>
+                            <svg width="24" height="6" viewBox="0 0 24 6" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="#9E8B5A"
+                                    d="M5.66667 3C5.66667 1.52724 4.47276 0.333333 3 0.333333C1.52724 0.333333 0.333334 1.52724 0.333334 3C0.333334 4.47276 1.52724 5.66667 3 5.66667C4.47276 5.66667 5.66667 4.47276 5.66667 3ZM24 3V2.5L3 2.5V3V3.5L24 3.5V3Z" />
+                            </svg>
+                            Peace of Mind for Families Abroad
+                            <svg width="24" height="6" viewBox="0 0 24 6" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="#9E8B5A"
+                                    d="M18.3333 3C18.3333 4.47276 19.5272 5.66667 21 5.66667C22.4728 5.66667 23.6667 4.47276 23.6667 3C23.6667 1.52724 22.4728 0.333333 21 0.333333C19.5272 0.333333 18.3333 1.52724 18.3333 3ZM0 3V3.5H21V3V2.5H0V3Z" />
+                            </svg>
+                        </span>
+                        <h2>A Bridge of Trust Across Miles</h2>
+                        <p class="section-desc">We understand the weight of distance. That is why Green Gardens is built
+                            around direct accountability and absolute transparency , keeping you connected, always.</p>
                     </div>
                 </div>
             </div>
-            <div class="family-row">
-                <div class="fam-card wow fadeInUp" data-wow-duration="1s" data-wow-delay="200ms">
-                    <i class="bi bi-telephone-fill"></i>
-                    <h5>Regular Family Updates</h5>
-                    <p>Families abroad receive regular updates on health, activities, and wellbeing. Simple, transparent, and reassuring — no news is never the answer here.</p>
+
+            <div class="row nri-hub-layout align-items-center mt-50">
+                <div class="col-lg-5 col-md-12 mb-4 mb-lg-0">
+                    <div class="nri-promise-showcase wow animate fadeInLeft" data-wow-delay="100ms">
+                        <div class="showcase-bg-glow"></div>
+                        <div class="showcase-card">
+                            <div class="showcase-badge">
+                                <span class="pulse-dot"></span>
+                                Owner-Led Care
+                            </div>
+                            <div class="showcase-content-wrapper">
+                                <div id="nri-showcase-title" class="showcase-title">Owner-Led Management</div>
+                                <p id="nri-showcase-text" class="showcase-text">The qualified owner is on-site and
+                                    accountable every single day. Decisions happen fast, and care remains deeply
+                                    personal , never outsourced to corporate layers.</p>
+                                <div class="showcase-quote">
+                                    <div class="quote-text">"You will always speak directly to someone who knows and
+                                        cares for your parent by name."</div>
+                                    <div class="quote-author">- Beena Mathew, Founder</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="fam-card wow fadeInUp" data-wow-duration="1s" data-wow-delay="280ms">
-                    <i class="bi bi-house-door-fill"></i>
-                    <h5>Guest Accommodation On-Site</h5>
-                    <p>When you visit, you stay on campus — not in a distant hotel. Guest rooms are comfortable and always ready. Your homecoming is part of the experience.</p>
-                </div>
-                <div class="fam-card wow fadeInUp" data-wow-duration="1s" data-wow-delay="360ms">
-                    <i class="bi bi-calendar-event-fill"></i>
-                    <h5>Function Centre for Celebrations</h5>
-                    <p>Anniversaries, birthdays, family reunions — our auditorium and catering service means every visit can be a celebration, however large the gathering.</p>
-                </div>
-                <div class="fam-card wow fadeInUp" data-wow-duration="1s" data-wow-delay="440ms">
-                    <i class="bi bi-shield-check-fill"></i>
-                    <h5>One Number. Always Answered.</h5>
-                    <p>A single direct number connects you to whoever is on duty. Owner-managed means you speak to someone who actually knows your parent — not a call centre script.</p>
+
+                <div class="col-lg-7 col-md-12">
+                    <div class="nri-tab-container wow animate fadeInRight" data-wow-delay="200ms">
+                        <div class="nri-tab-item active" data-tab="owner">
+                            <div class="tab-header">
+                                <span class="tab-icon"><i class="bi bi-person-check-fill"></i></span>
+                                <div class="tab-header-text">
+                                    <h4>Owner-Led Management</h4>
+                                    <p class="tab-tagline">Direct daily accountability on-site</p>
+                                </div>
+                                <span class="tab-arrow"><i class="bi bi-chevron-right"></i></span>
+                            </div>
+                        </div>
+
+                        <div class="nri-tab-item" data-tab="comm">
+                            <div class="tab-header">
+                                <span class="tab-icon"><i class="bi bi-telephone-fill"></i></span>
+                                <div class="tab-header-text">
+                                    <h4>Transparent Updates</h4>
+                                    <p class="tab-tagline">Consistent reports and updates on health</p>
+                                </div>
+                                <span class="tab-arrow"><i class="bi bi-chevron-right"></i></span>
+                            </div>
+                        </div>
+
+                        <div class="nri-tab-item" data-tab="calls">
+                            <div class="tab-header">
+                                <span class="tab-icon"><i class="bi bi-camera-video-fill"></i></span>
+                                <div class="tab-header-text">
+                                    <h4>Seamless Video Support</h4>
+                                    <p class="tab-tagline">Staying connected made natural and simple</p>
+                                </div>
+                                <span class="tab-arrow"><i class="bi bi-chevron-right"></i></span>
+                            </div>
+                        </div>
+
+                        <div class="nri-tab-item" data-tab="stays">
+                            <div class="tab-header">
+                                <span class="tab-icon"><i class="bi bi-house-heart-fill"></i></span>
+                                <div class="tab-header-text">
+                                    <h4>Homecoming Guest Stays</h4>
+                                    <p class="tab-tagline">Dedicated campus rooms for family visits</p>
+                                </div>
+                                <span class="tab-arrow"><i class="bi bi-chevron-right"></i></span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- Family Section End -->
 
 
@@ -1314,14 +2042,18 @@
             <div class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="200ms">
                 <span class="dancing-label">Come See for Yourself</span>
                 <h2>Meet the community.<br>Sit with us for a morning.</h2>
-                <p>No brochure can show you what it feels like to belong somewhere. Come for a visit — we'll introduce you to the people who made Green Gardens their home.</p>
+                <p>No brochure can show you what it feels like to belong somewhere. Come for a visit , we'll introduce
+                    you to the people who made Green Gardens their home.</p>
                 <div class="cta-btn-pair">
                     <a href="contact.html" class="primary-btn1 btn-hover">
                         Schedule a Visit
-                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7H13M13 7L7 1M13 7L7 13" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                            <path d="M1 7H13M13 7L7 1M13 7L7 13" stroke="white" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
                         <span></span>
                     </a>
-                    <a href="service-style-1.html" class="btn-outline-forest">
+                    <a href="a-day-here.html" class="btn-outline-forest">
                         A Day Here
                         <i class="bi bi-arrow-right"></i>
                         <span></span>
@@ -1333,69 +2065,114 @@
     <!-- CTA End -->
 
 
-    <!-- =====================================================
-         FOOTER
-    ====================================================== -->
-    <footer class="footer-area">
+    <!-- ═══════════════════════════════════════════════════════════
+         FOOTER ,  exact match to index.html
+    ═══════════════════════════════════════════════════════════ -->
+    <footer class="footer-section">
         <div class="container">
-            <div class="row gy-5">
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="footer-widget">
-                        <div class="footer-logo">
-                            <a href="index.html"><img src="assets/img/GREEN GARDENS green.png" alt="Green Gardens" style="max-width:140px;"></a>
+            <div class="footer-top">
+                <div class="row gy-5">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="footer-logo-and-title">
+                            <img class="footer-logo" src="assets/img/green-gardens-retirement-villas-kerala-logo.png"
+                                alt="Green Gardens" style="max-width:120px;">
+                            <div class="section-title mt-25">
+                                <p>Blending timeless charm with modern sophistication, we offer more than just a stay ,
+                                    we deliver an unforgettable managed lifestyle experience for seniors.</p>
+                            </div>
                         </div>
-                        <p class="footer-para">A peaceful retirement community in Valavoor, Pala, Kerala. Designed for dignity, comfort, and lifelong care.</p>
-                        <ul class="footer-social-list">
-                            <li class="single-social"><a href="https://www.facebook.com/"><i class="bx bxl-facebook"></i></a></li>
-                            <li class="single-social"><a href="https://www.instagram.com/"><i class="bx bxl-instagram"></i></a></li>
-                            <li class="single-social"><a href="https://www.youtube.com/"><i class="bx bxl-youtube"></i></a></li>
-                        </ul>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="footer-widget">
-                        <div class="widget-title"><h5>For Reservations</h5></div>
-                        <ul class="info-list">
-                            <li>
-                                <div class="icon"><i class="bi bi-telephone-fill"></i></div>
-                                <div class="content"><a href="tel:+919876543210">+91 98765 43210</a></div>
-                            </li>
-                            <li>
-                                <div class="icon"><i class="bi bi-envelope-fill"></i></div>
-                                <div class="content"><a href="mailto:info@greengardens.in">info@greengardens.in</a></div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="footer-widget">
-                        <div class="widget-title"><h5>Quick Links</h5></div>
-                        <ul class="info-list">
-                            <li><a href="service-style-1.html">A Day Here</a></li>
-                            <li><a href="service-style-2.html">Dining &amp; Wellness</a></li>
-                            <li><a href="service-style-3.html">Community</a></li>
-                            <li><a href="blog-grid.html">The Villas</a></li>
-                            <li><a href="industries-details.html">Our Story</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="location-and-payment">
-                        <div class="title-and-location-area">
-                            <div class="widget-title"><h5>Address</h5></div>
-                            <ul>
-                                <li>
+                    <div class="col-lg-5 col-sm-6 d-flex justify-content-sm-center">
+                        <div class="contact-wrapper">
+                            <div class="contact-area">
+                                <div class="widget-title">
+                                    <h5>For Reservations</h5>
+                                </div>
+                                <div class="icon-and-contact">
                                     <div class="icon">
-                                        <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M8 0C4.89838 0 2.375 2.52338 2.375 5.625C2.375 6.67294 2.66528 7.69563 3.21466 8.58288L7.67981 15.7784C7.76534 15.9163 7.91603 16 8.07809 16C8.24528 15.9987 8.39628 15.9124 8.48025 15.7721L12.8316 8.50688C13.3507 7.63838 13.625 6.64184 13.625 5.625C13.625 2.52338 11.1016 0 8 0Z"/>
+                                        <svg width="16" height="16" viewBox="0 0 16 16"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <g>
+                                                <path
+                                                    d="M15.0175 11.297C14.991 11.275 11.9965 9.132 11.184 9.2725C10.7935 9.3415 10.57 9.6075 10.1225 10.141C10.0505 10.227 9.877 10.4325 9.743 10.579C9.46016 10.4869 9.18429 10.3746 8.9175 10.243C7.54026 9.5725 6.4275 8.45974 5.757 7.0825C5.62543 6.81571 5.51315 6.53984 5.421 6.257C5.568 6.1225 5.774 5.949 5.862 5.875C6.3925 5.43 6.6585 5.2065 6.7275 4.8155C6.869 4.006 4.725 1.009 4.703 0.982C4.60536 0.843528 4.4782 0.728462 4.33069 0.645108C4.18317 0.561755 4.01899 0.512193 3.85 0.5C2.981 0.5 0.5 3.718 0.5 4.2605C0.5 4.292 0.5455 7.494 4.494 11.5105C8.506 15.4545 11.708 15.5 11.7395 15.5C12.282 15.5 15.5 13.019 15.5 12.15C15.4878 11.9809 15.4382 11.8167 15.3548 11.6692C15.2713 11.5217 15.1561 11.3945 15.0175 11.297Z" />
+                                            </g>
                                         </svg>
                                     </div>
-                                </li>
-                                <li>
-                                    <a class="location" href="#">Green Gardens<br>16/13 Kuzhikulam Valavoor,<br>Kottayam, Pala, Kerala 686635</a>
-                                    <div class="content"><a class="get-direction" href="https://www.google.com/maps">Get Direction</a></div>
-                                </li>
-                            </ul>
+                                    <div class="contact">
+                                        <ul>
+                                            <li><a href="tel:+918921234567">+91 9249551740</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="icon-and-contact">
+                                    <div class="icon">
+                                        <svg width="16" height="16" viewBox="0 0 16 16"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M13.7695 2.66797H2.23047C1.55284 2.66797 1 3.2202 1 3.89844V12.1016C1 12.7775 1.55037 13.332 2.23047 13.332H13.7695C14.4455 13.332 15 12.7817 15 12.1016V3.89844C15 3.2225 14.4496 2.66797 13.7695 2.66797ZM13.5996 3.48828L8.02609 9.06184L2.40435 3.48828H13.5996ZM1.82031 11.9317V4.06439L5.77091 7.98111L1.82031 11.9317ZM2.40036 12.5117L6.35344 8.55863L7.73859 9.93189C7.89894 10.0909 8.15769 10.0903 8.31738 9.93063L9.66797 8.58004L13.5996 12.5117H2.40036ZM14.1797 11.9317L10.248 8L14.1797 4.0683V11.9317Z" />
+                                        </svg>
+                                    </div>
+                                    <div class="contact">
+                                        <ul class="two">
+                                            <li><a
+                                                    href="mailto:greengardens.connect@gmail.com">greengardens.connect@gmail.com</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="social-area">
+                                <h5>Social Media Links</h5>
+                                <ul class="social-list">
+                                    <li class="single-social"><a href="https://www.facebook.com/"><svg width="20"
+                                                height="20" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+                                                <g>
+                                                    <path
+                                                        d="M8.99922 0.450195C-1.60152 0.760695 -2.68242 15.6355 7.65642 17.5502C7.65624 17.5502 7.65624 11.5391 7.65624 11.5391H5.47428V9.0524H7.65642V7.15736C7.71726 3.68768 10.5055 3.56042 12.8264 3.97856V6.09554H11.7426C10.675 6.09554 10.342 6.75866 10.342 7.43888V9.05258H12.7256L12.3445 11.5391H10.342V17.5502C20.6832 15.6337 19.5974 0.759435 8.99922 0.450195Z" />
+                                                </g>
+                                            </svg></a></li>
+                                    <li class="single-social"><a href="https://www.instagram.com/"><svg width="20"
+                                                height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                <g>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                        d="M6.33464 2.6665C4.30959 2.6665 2.66797 4.30812 2.66797 6.33317V13.6665C2.66797 15.6916 4.30959 17.3332 6.33464 17.3332H13.668C15.693 17.3332 17.3346 15.6916 17.3346 13.6665V6.33317C17.3346 4.30812 15.693 2.6665 13.668 2.6665H6.33464ZM10.0013 7.33317C8.52854 7.33317 7.33464 8.52708 7.33464 9.99984C7.33464 11.4726 8.52854 12.6665 10.0013 12.6665C11.474 12.6665 12.668 11.4726 12.668 9.99984C12.668 8.52708 11.474 7.33317 10.0013 7.33317ZM6.0013 9.99984C6.0013 7.7907 7.79216 5.99984 10.0013 5.99984C12.2104 5.99984 14.0013 7.7907 14.0013 9.99984C14.0013 12.209 12.2104 13.9998 10.0013 13.9998C7.79216 13.9998 6.0013 12.209 6.0013 9.99984ZM14.0013 4.6665C13.2649 4.6665 12.668 5.26346 12.668 5.99984C12.668 6.73622 13.2649 7.33317 14.0013 7.33317C14.7377 7.33317 15.3346 6.73622 15.3346 5.99984C15.3346 5.26346 14.7377 4.6665 14.0013 4.6665Z" />
+                                                </g>
+                                            </svg></a></li>
+                                    <li class="single-social"><a href="https://www.youtube.com/"><svg width="20"
+                                                height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M17.2818 6.40997C17.1077 5.76736 16.5972 5.2608 15.9499 5.08777C14.7673 4.7666 10.0367 4.7666 10.0367 4.7666C10.0367 4.7666 5.30627 4.7666 4.12365 5.0756C3.48875 5.24845 2.96585 5.76748 2.7917 6.40997C2.48047 7.58367 2.48047 10.0178 2.48047 10.0178C2.48047 10.0178 2.48047 12.4642 2.7917 13.6256C2.96601 14.2681 3.47631 14.7747 4.12375 14.9477C5.31872 15.269 10.0369 15.269 10.0369 15.269C10.0369 15.269 14.7673 15.269 15.9499 14.96C16.5973 14.787 17.1077 14.2805 17.282 13.638C17.5932 12.4642 17.5931 10.0301 17.5931 10.0301C17.5931 10.0301 17.6056 7.58365 17.2818 6.40997ZM8.53054 12.2665V7.76904L12.4643 10.0178L8.53054 12.2665Z" />
+                                            </svg></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="location-and-payment">
+                            <div class="title-and-location-area">
+                                <div class="widget-title">
+                                    <h5>Address</h5>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <div class="icon">
+                                            <svg width="16" height="16" viewBox="0 0 16 16"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M8 0C4.89838 0 2.375 2.52338 2.375 5.625C2.375 6.67294 2.66528 7.69563 3.21466 8.58288L7.67981 15.7784C7.76534 15.9163 7.91603 16 8.07809 16C8.07934 16 8.08056 16 8.08181 16C8.24528 15.9987 8.39628 15.9124 8.48025 15.7721L12.8316 8.50688C13.3507 7.63838 13.625 6.64184 13.625 5.625C13.625 2.52338 11.1016 0 8 0Z" />
+                                            </svg>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a class="location" href="https://maps.app.goo.gl/uX3Qd8y9L7R3uBND6"
+                                            target="_blank">Green Gardens, 16/13 Kuzhikulam, Valavoor, Pala, Kerala
+                                            686635</a>
+                                        <div class="content"><a class="get-direction"
+                                                href="https://maps.app.goo.gl/uX3Qd8y9L7R3uBND6" target="_blank">Get
+                                                Direction</a></div>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1405,10 +2182,10 @@
             <div class="container">
                 <div class="footer-menu-wrap">
                     <ul class="footer-menu-list">
-                        <li class="menu-list"><a href="blog-grid.html">Living Spaces</a></li>
-                        <li class="menu-list"><a href="service-style-1.html">Daily Living</a></li>
-                        <li class="menu-list"><a href="industries-details.html">Our Story</a></li>
-                        <li class="menu-list"><a href="service-style-4.html">Gallery</a></li>
+                        <li class="menu-list"><a href="the-villas.html">Living Spaces</a></li>
+                        <li class="menu-list"><a href="a-day-here.html">Daily Living</a></li>
+                        <li class="menu-list"><a href="story.html">Our Story</a></li>
+                        <li class="menu-list"><a href="gallery.html">Gallery</a></li>
                         <li class="menu-list"><a href="#">Terms &amp; Conditions</a></li>
                         <li class="menu-list"><a href="#">Privacy Policy</a></li>
                     </ul>
@@ -1417,7 +2194,8 @@
         </div>
         <div class="container">
             <div class="footer-bottom">
-                <p>©Copyright 2025 <a href="index.html">Green Gardens</a> | Design By <a href="https://www.ornabyte.com/">Ornabyte</a></p>
+                <p>©Copyright 2026 <a href="index.html">Green Gardens</a> | Design By <a
+                        href="https://www.ornabyte.com/">Ornabyte</a></p>
             </div>
         </div>
     </footer>
@@ -1435,7 +2213,6 @@
     <script src="assets/js/slick.js"></script>
     <script src="assets/js/waypoints.min.js"></script>
     <script src="assets/js/jquery.counterup.min.js"></script>
-    <script src="assets/js/jquery.counterup.js"></script>
     <script src="assets/js/wow.min.js"></script>
     <script src="assets/js/circletype.min.js"></script>
     <script src="assets/js/jquery.nice-select.min.js"></script>
@@ -1446,16 +2223,29 @@
 
     <script>
         $(document).ready(function () {
-            if ($('.get-offer-text-slider').length) {
-                new Swiper('.get-offer-text-slider', {
-                    loop: true,
-                    autoplay: { delay: 3000, disableOnInteraction: false },
-                    navigation: {
-                        nextEl: '.get-offer-text-slider-next',
-                        prevEl: '.get-offer-text-slider-prev',
+            // Showcase Tab Switcher
+            const tabs = document.querySelectorAll('.showcase-tab-btn');
+            const panels = document.querySelectorAll('.showcase-panel');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function () {
+                    const target = this.getAttribute('data-tab');
+
+                    tabs.forEach(t => {
+                        t.classList.remove('active');
+                        t.setAttribute('aria-selected', 'false');
+                    });
+                    panels.forEach(p => p.classList.remove('active'));
+
+                    this.classList.add('active');
+                    this.setAttribute('aria-selected', 'true');
+                    const targetPanel = document.getElementById(target);
+                    if (targetPanel) {
+                        targetPanel.classList.add('active');
                     }
                 });
-            }
+            });
+
             if ($('.home1-testimonial-slider').length) {
                 new Swiper('.home1-testimonial-slider', {
                     loop: true,
@@ -1476,4 +2266,5 @@
     </script>
 
 </body>
+
 </html>

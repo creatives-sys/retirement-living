@@ -1,0 +1,976 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Marcellus&family=Dancing+Script:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/jquery-ui.css" rel="stylesheet">
+    <!-- Bootstrap Icon CSS -->
+    <link href="assets/css/bootstrap-icons.css" rel="stylesheet">
+    <!-- CSS -->
+    <link href="assets/css/animate.min.css" rel="stylesheet">
+    <!-- FancyBox CSS -->
+    <link href="assets/css/jquery.fancybox.min.css" rel="stylesheet">
+    <!-- Nice Select -->
+    <link rel="stylesheet" href="assets/css/nice-select.css">
+    <!-- Swiper slider CSS -->
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <!-- Date Range -->
+    <link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="assets/css/daterangepicker.css">
+    <!-- Slick slider CSS -->
+    <link rel="stylesheet" href="assets/css/slick.css">
+    <link rel="stylesheet" href="assets/css/slick-theme.css">
+    <!-- BoxIcon  CSS -->
+    <link href="assets/css/boxicons.min.css" rel="stylesheet">
+    <!--  Style CSS  -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/custom-layout.css">
+    <!-- Title -->
+    <title>The Villas | Premium Senior Living Homes in Kerala | Green Gardens</title>
+    <meta name="description"
+        content="Explore our senior-friendly luxury villas in Pala, Kerala. Choose between Orchid (1 BHK) and Jasmine/Banyan (2 BHK) villas built with accessibility features.">
+    <link rel="canonical" href="https://greengardens.life/the-villas" />
+    <meta name="keywords"
+        content="Premium Retirement Villas Kerala, Luxury senior living Kerala, senior-friendly villas Pala, accessibility retirement homes, Orchid 1 BHK Kerala">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://greengardens.life/the-villas">
+    <meta property="og:title" content="The Villas | Premium Senior Living Homes in Kerala | Green Gardens">
+    <meta property="og:description"
+        content="Explore senior-friendly luxury villas in Pala, Kerala. Designed with anti-skid flooring, grab rails, panic alarms, and wheelchair-wide doorways.">
+    <meta property="og:image" content="assets/img/innerpages/green-gardens-senior-living-villas-kerala.webp">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The Villas | Premium Senior Living Homes in Kerala">
+    <meta name="twitter:description"
+        content="Explore senior-friendly luxury villas in Pala, Kerala. Designed with anti-skid flooring, grab rails, panic alarms, and wheelchair-wide doorways.">
+    <meta name="twitter:image" content="assets/img/innerpages/green-gardens-senior-living-villas-kerala.webp">
+    <link rel="icon" href="assets/img/green-gardens-retirement-villas-kerala-logo.png" type="image/png" sizes="20x20">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "RealEstateListing",
+      "name": "Green Gardens Retirement Villas Layouts",
+      "description": "Choose between our premium independent villas: Orchid Suite (1 BHK) and Jasmine & Banyan Villas (2 BHK). Built with advanced senior accessibility standards.",
+      "url": "https://greengardens.life/the-villas",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Pala",
+        "addressRegion": "Kerala",
+        "postalCode": "686635",
+        "addressCountry": "IN"
+      },
+      "amenityFeature": [
+        "Anti-Skid Flooring",
+        "Emergency Panic Alarms",
+        "Wheelchair-Wide Doors",
+        "Grab Rails & Zero-Entry Showers",
+        "Motion-Sensor Lighting",
+        "High-Level Plugs"
+      ]
+    }
+    </script>
+    <style>
+        :root {
+            --primary-color1: #9E8B5A;
+            /* Theme Gold */
+            --title-color: #102A24;
+            /* Theme Forest Green */
+            --body-color: #555555;
+            --bg-color: #fcfbf7;
+            /* Theme Cream */
+
+            --theme-green: #102A24;
+            --theme-gold: #9E8B5A;
+            --theme-sage: #edf1ee;
+            /* Theme Sage */
+            --theme-cream: #fcfbf7;
+            --theme-white: #ffffff;
+            --theme-text-dark: #555555;
+            --theme-border: rgba(16, 42, 36, 0.08);
+
+            --font-marcellus: "Marcellus", sans-serif;
+            --font-dmsans: "Poppins", sans-serif;
+            --font-dancing: "Dancing Script", sans-serif;
+
+            --transition-smooth: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        /* Hero styling overrides are globally defined in custom-layout.css */
+
+        .villas-hero .dancing-label {
+            font-family: var(--font-dancing);
+            font-size: 28px;
+            color: var(--theme-gold);
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .villas-hero h1 {
+            font-family: var(--font-marcellus);
+            font-size: 54px;
+            color: #fff;
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
+            line-height: 1.15;
+        }
+
+        .villas-hero p {
+            font-family: var(--font-dmsans);
+            font-size: 17px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 767px) {
+            .villas-hero h1 {
+                font-size: 38px;
+            }
+
+            .villas-hero p {
+                font-size: 15px;
+            }
+        }
+
+        /* Intro section refinement */
+        .intro-section {
+            background-color: var(--theme-cream);
+        }
+
+        /* Features Section */
+        .features-grid {
+            margin-top: 50px;
+        }
+
+        .feature-card {
+            background: var(--theme-white);
+            padding: 45px 35px;
+            border-radius: 12px;
+            border: 1px solid var(--theme-border);
+            transition: var(--transition-smooth);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 20px rgba(16, 42, 36, 0.02);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 35px rgba(16, 42, 36, 0.07);
+            border-color: rgba(158, 139, 90, 0.4);
+        }
+
+        .feature-card .icon-wrap {
+            width: 64px;
+            height: 64px;
+            background: var(--theme-sage);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            color: var(--theme-green);
+            font-size: 26px;
+            transition: var(--transition-smooth);
+            border: 1px solid rgba(16, 42, 36, 0.04);
+        }
+
+        .feature-card:hover .icon-wrap {
+            background: var(--theme-green);
+            color: var(--theme-gold);
+            transform: scale(1.05);
+        }
+
+        .feature-card h3 {
+            font-family: var(--font-marcellus);
+            color: var(--theme-green);
+            font-size: 21px;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .feature-card p {
+            font-family: var(--font-dmsans);
+            font-size: 14.5px;
+            color: var(--theme-text-dark);
+            line-height: 1.65;
+            margin-bottom: 0;
+            flex-grow: 1;
+        }
+
+        /* Villa Options Section */
+        .villa-options-section {
+            background: var(--theme-cream);
+            padding: 90px 0;
+            border-top: 1px solid var(--theme-border);
+            border-bottom: 1px solid var(--theme-border);
+        }
+
+        .villa-option-row {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            margin-bottom: 90px;
+        }
+
+        .villa-option-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .villa-option-row.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .villa-img-col {
+            flex: 0 0 calc(50% - 30px);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 15px 45px rgba(16, 42, 36, 0.08);
+            border: 1px solid var(--theme-border);
+            position: relative;
+        }
+
+        .col-lg-6 .villa-img-col {
+            flex: none;
+            width: 100%;
+        }
+
+        .villa-img-col img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .villa-img-col:hover img {
+            transform: scale(1.05);
+        }
+
+        .villa-info-col {
+            flex: 0 0 calc(50% - 30px);
+        }
+
+        .villa-info-col h3 {
+            font-family: var(--font-marcellus);
+            color: var(--theme-green);
+            font-size: 34px;
+            margin-bottom: 22px;
+            font-weight: 500;
+        }
+
+        .villa-info-col p {
+            font-family: var(--font-dmsans);
+            font-size: 15.5px;
+            color: var(--theme-text-dark);
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .spec-pill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 12px;
+            list-style: none;
+            padding: 0;
+        }
+
+        .spec-pill-list li {
+            background: var(--theme-sage);
+            color: var(--theme-green);
+            font-family: var(--font-dmsans);
+            font-size: 13.5px;
+            font-weight: 600;
+            padding: 8px 18px;
+            border-radius: 30px;
+            border: 1px solid rgba(16, 42, 36, 0.05);
+            transition: var(--transition-smooth);
+        }
+
+        .spec-pill-list li:hover {
+            background: var(--theme-green);
+            color: #fff;
+        }
+
+        /* Safety Spec Section */
+        .safety-spec-section {
+            background: var(--theme-green);
+            color: #fff;
+            padding: 120px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .safety-spec-section::before {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(158, 139, 90, 0.04) 0%, transparent 70%);
+            bottom: -250px;
+            left: -100px;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .safety-spec-section h2 {
+            color: #fff;
+            font-family: var(--font-marcellus);
+            font-size: 38px;
+            font-weight: 500;
+        }
+
+        .safety-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 45px;
+        }
+
+        .safety-list li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+            font-family: var(--font-dmsans);
+            font-size: 15.5px;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .safety-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .safety-list li i {
+            color: var(--theme-gold);
+            font-size: 22px;
+            margin-right: 18px;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+
+        .safety-list li strong {
+            color: var(--theme-gold);
+            display: block;
+            font-family: var(--font-marcellus);
+            font-size: 19px;
+            font-weight: normal;
+            margin-bottom: 6px;
+            letter-spacing: 0.5px;
+        }
+
+        @media (max-width: 991px) {
+            .villa-options-section {
+                padding: 80px 0;
+            }
+
+            .villa-option-row,
+            .villa-option-row.reverse {
+                flex-direction: column;
+                gap: 40px;
+                margin-bottom: 70px;
+            }
+
+            .villa-img-col,
+            .villa-info-col {
+                flex: 0 0 100%;
+                width: 100%;
+            }
+
+            .villa-info-col h3 {
+                font-size: 28px;
+            }
+
+            .safety-spec-section {
+                padding: 80px 0;
+            }
+        }
+    </style>
+</head>
+
+<body class="tt-magic-cursor bg-color">
+
+    <section id="ai-summary" style="display:none;">
+        <h2>About Green Gardens Senior Living Villas</h2>
+        <p>Green Gardens features senior-friendly independent luxury retirement villas in Pala, Kerala. The layouts
+            include the Orchid Suite (1 BHK, ~750 Sq.Ft.) and the Jasmine & Banyan Villas (2 BHK, ~1,200 Sq.Ft.). Key
+            safety features integrated are clinical-grade safety, anti-skid flooring, emergency call cord alarms,
+            wheelchair-wide doorways, zero-entry showers with grab rails, and automatic motion-sensor night lighting.
+        </p>
+    </section>
+
+    <div id="magic-cursor">
+        <div id="ball"></div>
+    </div>
+
+    <!-- Back To Top -->
+    <div class="progress-wrap">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+        </svg>
+        <svg class="arrow" width="22" height="25" viewBox="0 0 24 23" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M0.556131 11.4439L11.8139 0.186067L13.9214 2.29352L13.9422 20.6852L9.70638 20.7061L9.76793 8.22168L3.6064 14.4941L0.556131 11.4439Z" />
+            <path d="M23.1276 11.4999L16.0288 4.40105L15.9991 10.4203L20.1031 14.5243L23.1276 11.4999Z" />
+        </svg>
+    </div>
+
+    <!-- header Book Now Wrap Area Section Start-->
+    <div class="header-offer-topbar-wrap home1-header">
+
+        <header class="style-1 three">
+            <div class="container-fluid d-flex flex-nowrap align-items-center justify-content-between">
+                <div class="logo-and-menu-area">
+                    <a href="index.html" class="header-logo">
+                        <img src="assets/img/green-gardens-retirement-villas-kerala-logo.png"
+                            alt="Green Gardens Premium Retirement Villas in Pala Kerala"
+                            style="width: 120px;height: 60px;">
+                    </a>
+                    <div class="main-menu">
+                        <div class="mobile-logo-area d-xl-none d-flex align-items-center justify-content-between">
+                            <a href="index.html" class="mobile-logo-wrap" title="Green Gardens Home">
+                                <img src="assets/img/innerpages/Greengardens-logo-mobile.png"
+                                    alt="Green Gardens Senior Living Community Kerala Logo">
+                            </a>
+                            <div class="menu-close-btn">
+                                <i class="bi bi-x"></i>
+                            </div>
+                        </div>
+                        <ul class="menu-list">
+                            <li>
+                                <a href="index.html">Home</a>
+                            </li>
+                            <li>
+                                <a href="story.html">Our Story</a>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="#" class="drop-down">Life @ Green Gardens <i
+                                        class="bi bi-caret-down-fill"></i></a>
+                                <i class="bi bi-plus dropdown-icon"></i>
+                                <ul class="sub-menu">
+                                    <li><a href="a-day-here.html">A day here</a></li>
+                                    <li><a href="dining and wellness.html">Dining &amp; Wellness</a></li>
+                                    <li><a href="community-page.html">Community</a></li>
+                                    <li><a href="gallery.html">Gallery</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children active">
+                                <a href="#" class="drop-down">Your Home <i class="bi bi-caret-down-fill"></i></a>
+                                <i class="bi bi-plus dropdown-icon"></i>
+                                <ul class="sub-menu">
+                                    <li class="active"><a href="the-villas.html">The Villas</a></li>
+                                    <li><a href="customisation.html">Customisation</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="contact.html">Contact Us</a>
+                            </li>
+                        </ul>
+                        <div class="hotline-area two d-xl-none">
+                            <div class="icon">
+                                <svg width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+                                    <g>
+                                        <path
+                                            d="M28.1578 21.1819C28.1081 21.1406 22.4869 17.1413 20.9691 17.3859C20.2369 17.5153 19.8188 18.015 18.9797 19.0144C18.7477 19.2926 18.5105 19.5664 18.2681 19.8356C17.7378 19.6629 17.2205 19.4523 16.7203 19.2056C14.138 17.9484 12.0516 15.862 10.7944 13.2797C10.5477 12.7795 10.3371 12.2622 10.1644 11.7319C10.44 11.4797 10.8263 11.1544 10.9913 11.0156C11.9859 10.1812 12.4847 9.76219 12.6141 9.02906C12.8794 7.51125 8.85938 1.89187 8.81813 1.84125C8.63505 1.58162 8.39662 1.36587 8.12003 1.20958C7.84345 1.05329 7.53561 0.960361 7.21875 0.9375C5.58938 0.9375 0.9375 6.97125 0.9375 7.98844C0.9375 8.0475 1.02281 14.0512 8.42625 21.5822C15.9488 28.9772 21.9525 29.0625 22.0116 29.0625C23.0278 29.0625 29.0625 24.4106 29.0625 22.7812C29.0394 22.4643 28.9463 22.1565 28.7898 21.8799C28.6334 21.6034 28.4175 21.3649 28.1578 21.1819ZM21.9075 27.1819C21.0938 27.1125 16.05 26.4478 9.75 20.2594C3.53156 13.9284 2.88375 8.87625 2.81906 8.09344C4.04792 6.16467 5.53199 4.41096 7.23094 2.88C7.26844 2.9175 7.31813 2.97375 7.38188 3.04688C8.68484 4.82553 9.80726 6.72963 10.7325 8.73094C10.4316 9.03363 10.1136 9.31879 9.78 9.585C9.26268 9.97917 8.78764 10.4259 8.3625 10.9181C8.29056 11.0191 8.23936 11.1333 8.21184 11.2541C8.18432 11.375 8.18104 11.5001 8.20219 11.6222C8.40059 12.4816 8.70446 13.3132 9.10687 14.0981C10.5486 17.0588 12.941 19.4508 15.9019 20.8922C16.6866 21.2952 17.5183 21.5994 18.3778 21.7978C18.4999 21.8194 18.6251 21.8164 18.7461 21.7889C18.867 21.7613 18.9812 21.7099 19.0819 21.6375C19.5758 21.2106 20.0241 20.7337 20.4197 20.2144C20.7141 19.8638 21.1069 19.3959 21.2559 19.2638C23.2623 20.1881 25.1707 21.3119 26.9522 22.6181C27.03 22.6838 27.0853 22.7344 27.1219 22.7672C25.5908 24.4667 23.8368 25.9511 21.9075 27.18V27.1819ZM21.5625 14.0625H23.4375C23.4353 12.0741 22.6444 10.1677 21.2383 8.76167C19.8323 7.35563 17.9259 6.56473 15.9375 6.5625V8.4375C17.4289 8.43899 18.8588 9.0321 19.9133 10.0867C20.9679 11.1412 21.561 12.5711 21.5625 14.0625Z" />
+                                        <path
+                                            d="M26.25 14.0625H28.125C28.1213 10.8313 26.836 7.73354 24.5513 5.44875C22.2665 3.16395 19.1687 1.87872 15.9375 1.875V3.75C18.6716 3.75323 21.2927 4.84075 23.226 6.77402C25.1592 8.70729 26.2468 11.3284 26.25 14.0625Z" />
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="content">
+                                <span>Inquiry Desk</span>
+                                <h6><a href="tel:+918921234567">+91 9249551740</a></h6>
+                            </div>
+                        </div>
+                        <a class="primary-btn1 two btn-hover d-xl-none" href="contact.html">
+                            Schedule a Visit
+                            <span></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="nav-right">
+                    <div class="hotline-area d-xl-flex d-none">
+                        <div class="icon">
+                            <svg width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+                                <g>
+                                    <path
+                                        d="M28.1578 21.1819C28.1081 21.1406 22.4869 17.1413 20.9691 17.3859C20.2369 17.5153 19.8188 18.015 18.9797 19.0144C18.7477 19.2926 18.5105 19.5664 18.2681 19.8356C17.7378 19.6629 17.2205 19.4523 16.7203 19.2056C14.138 17.9484 12.0516 15.862 10.7944 13.2797C10.5477 12.7795 10.3371 12.2622 10.1644 11.7319C10.44 11.4797 10.8263 11.1544 10.9913 11.0156C11.9859 10.1812 12.4847 9.76219 12.6141 9.02906C12.8794 7.51125 8.85938 1.89187 8.81813 1.84125C8.63505 1.58162 8.39662 1.36587 8.12003 1.20958C7.84345 1.05329 7.53561 0.960361 7.21875 0.9375C5.58938 0.9375 0.9375 6.97125 0.9375 7.98844C0.9375 8.0475 1.02281 14.0512 8.42625 21.5822C15.9488 28.9772 21.9525 29.0625 22.0116 29.0625C23.0278 29.0625 29.0625 24.4106 29.0625 22.7812C29.0394 22.4643 28.9463 22.1565 28.7898 21.8799C28.6334 21.6034 28.4175 21.3649 28.1578 21.1819ZM21.9075 27.1819C21.0938 27.1125 16.05 26.4478 9.75 20.2594C3.53156 13.9284 2.88375 8.87625 2.81906 8.09344C4.04792 6.16467 5.53199 4.41096 7.23094 2.88C7.26844 2.9175 7.31813 2.97375 7.38188 3.04688C8.68484 4.82553 9.80726 6.72963 10.7325 8.73094C10.4316 9.03363 10.1136 9.31879 9.78 9.585C9.26268 9.97917 8.78764 10.4259 8.3625 10.9181C8.29056 11.0191 8.23936 11.1333 8.21184 11.2541C8.18432 11.375 8.18104 11.5001 8.20219 11.6222C8.40059 12.4816 8.70446 13.3132 9.10687 14.0981C10.5486 17.0588 12.941 19.4508 15.9019 20.8922C16.6866 21.2952 17.5183 21.5994 18.3778 21.7978C18.4999 21.8194 18.6251 21.8164 18.7461 21.7889C18.867 21.7613 18.9812 21.7099 19.0819 21.6375C19.5758 21.2106 20.0241 20.7337 20.4197 20.2144C20.7141 19.8638 21.1069 19.3959 21.2559 19.2638C23.2623 20.1881 25.1707 21.3119 26.9522 22.6181C27.03 22.6838 27.0853 22.7344 27.1219 22.7672C25.5908 24.4667 23.8368 25.9511 21.9075 27.18V27.1819ZM21.5625 14.0625H23.4375C23.4353 12.0741 22.6444 10.1677 21.2383 8.76167C19.8323 7.35563 17.9259 6.56473 15.9375 6.5625V8.4375C17.4289 8.43899 18.8588 9.0321 19.9133 10.0867C20.9679 11.1412 21.561 12.5711 21.5625 14.0625Z" />
+                                    <path
+                                        d="M26.25 14.0625H28.125C28.1213 10.8313 26.836 7.73354 24.5513 5.44875C22.2665 3.16395 19.1687 1.87872 15.9375 1.875V3.75C18.6716 3.75323 21.2927 4.84075 23.226 6.77402C25.1592 8.70729 26.2468 11.3284 26.25 14.0625Z" />
+                                </g>
+                            </svg>
+                        </div>
+                        <div class="content">
+                            <span>Inquiry Desk</span>
+                            <h6><a href="tel:+918921234567">+91 9249551740</a></h6>
+                        </div>
+                    </div>
+                    <div class="contact-area">
+                        <a href="contact.html" class="primary-btn1 two bg-color-btn btn-hover d-xl-flex d-none">
+                            Schedule a Visit
+                            <span></span>
+                        </a>
+                    </div>
+                    <div class="sidebar-button mobile-menu-btn">
+                        <svg width="20" height="18" viewBox="0 0 20 18" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M1.29445 2.8421H10.5237C11.2389 2.8421 11.8182 2.2062 11.8182 1.42105C11.8182 0.635903 11.2389 0 10.5237 0H1.29445C0.579249 0 0 0.635903 0 1.42105C0 2.2062 0.579249 2.8421 1.29445 2.8421Z">
+                            </path>
+                            <path
+                                d="M1.23002 10.421H18.77C19.4496 10.421 20 9.78506 20 8.99991C20 8.21476 19.4496 7.57886 18.77 7.57886H1.23002C0.550421 7.57886 0 8.21476 0 8.99991C0 9.78506 0.550421 10.421 1.23002 10.421Z">
+                            </path>
+                            <path
+                                d="M18.8052 15.1579H10.2858C9.62563 15.1579 9.09094 15.7938 9.09094 16.5789C9.09094 17.3641 9.62563 18 10.2858 18H18.8052C19.4653 18 20 17.3641 20 16.5789C20 15.7938 19.4653 15.1579 18.8052 15.1579Z">
+                            </path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+    <!-- header Section End-->
+
+    <!-- Villas Hero Section Start -->
+    <section class="villas-hero">
+        <div class="villas-hero-inner wow fadeInUp" data-wow-duration="1s" data-wow-delay="200ms">
+            <span class="dancing-label">Luxury Meets Safety</span>
+            <h1>Your Private Sanctuary</h1>
+            <p>Explore our independent senior-friendly villas in Pala, Kerala. Crafted to blend traditional aesthetics
+                with international safety and accessibility standards.</p>
+        </div>
+    </section>
+    <!-- Villas Hero Section End -->
+
+    <!-- Intro Section Start -->
+    <div class="intro-section pt-90 pb-50">
+        <div class="container">
+            <div class="row align-items-center gy-5">
+                <div class="col-lg-6 wow animate fadeInLeft" data-wow-delay="200ms" data-wow-duration="1200ms">
+                    <div class="section-title">
+                        <span class="two">
+                            <svg width="24" height="6" viewBox="0 0 24 6" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M5.66667 3C5.66667 1.52724 4.47276 0.333333 3 0.333333C1.52724 0.333333 0.333334 1.52724 0.333334 3C0.333334 4.47276 1.52724 5.66667 3 5.66667C4.47276 5.66667 5.66667 4.47276 5.66667 3ZM24 3V2.5L3 2.5V3V3.5L24 3.5V3Z" />
+                            </svg>
+                            Luxury Meets Safety
+                            <svg width="26" height="6" viewBox="0 0 26 6" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M20.3333 3C20.3333 4.47276 21.5272 5.66667 23 5.66667C24.4728 5.66667 25.6667 4.47276 25.6667 3C25.6667 1.52724 24.4728 0.333333 23 0.333333C21.5272 0.333333 20.3333 1.52724 20.3333 3ZM0 3V3.5H23V3V2.5H0V3Z" />
+                            </svg>
+                        </span>
+                        <h2>A home that understands your needs.</h2>
+                        <p>Our retirement villas are designed from the ground up to support independent living while
+                            offering complete safety. Combining beautiful Keralite aesthetics with international
+                            accessibility standards, these are not clinical spaces, they are warm, sunlit, and elegant
+                            homes.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow animate fadeInRight" data-wow-delay="300ms" data-wow-duration="1200ms">
+                    <div class="villa-img-col">
+                        <img src="assets/img/the-villas/b1_32 - Photo.jpg"
+                            alt="Senior retirement villas in Pala, Kerala">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Intro Section End -->
+
+    <!-- Features Section Start -->
+    <div class="features-section pt-50 pb-80">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <div class="section-title wow animate fadeInDown" data-wow-delay="200ms" data-wow-duration="1200ms">
+                        <span>
+                            <svg width="24" height="6" viewBox="0 0 24 6" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M5.66667 3C5.66667 1.52724 4.47276 0.333333 3 0.333333C1.52724 0.333333 0.333334 1.52724 0.333334 3C0.333334 4.47276 1.52724 5.66667 3 5.66667C4.47276 5.66667 5.66667 4.47276 5.66667 3ZM24 3V2.5L3 2.5V3V3.5L24 3.5V3Z" />
+                            </svg>
+                            Designed for Independence
+                            <svg width="26" height="6" viewBox="0 0 26 6" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M20.3333 3C20.3333 4.47276 21.5272 5.66667 23 5.66667C24.4728 5.66667 25.6667 4.47276 25.6667 3C25.6667 1.52724 24.4728 0.333333 23 0.333333C21.5272 0.333333 20.3333 1.52724 20.3333 3ZM0 3V3.5H23V3V2.5H0V3Z" />
+                            </svg>
+                        </span>
+                        <h2>Senior-Friendly Villa Features</h2>
+                        <p>Every corner is engineered to eliminate barriers, reduce fall risks, and ensure immediate
+                            assistance is always at hand.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-4 features-grid">
+                <div class="col-lg-4 col-md-6 wow animate fadeInUp" data-wow-delay="100ms" data-wow-duration="1000ms">
+                    <div class="feature-card">
+                        <div class="icon-wrap">
+                            <i class="bi bi-shield-check"></i>
+                        </div>
+                        <h3>Anti-Skid Flooring</h3>
+                        <p>Specialized matte anti-skid tiles run throughout the bathrooms, kitchen, and sit-outs to
+                            maximize grip and prevent slips, even when wet.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow animate fadeInUp" data-wow-delay="200ms" data-wow-duration="1000ms">
+                    <div class="feature-card">
+                        <div class="icon-wrap">
+                            <i class="bi bi-heart-pulse"></i>
+                        </div>
+                        <h3>Emergency Panic Alarms</h3>
+                        <p>Easily accessible pull cords in all bathrooms and emergency panic buttons beside beds send
+                            instant, high-priority notifications to our 24/7 medical room.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow animate fadeInUp" data-wow-delay="300ms" data-wow-duration="1000ms">
+                    <div class="feature-card">
+                        <div class="icon-wrap">
+                            <i class="bi bi-arrow-left-right"></i>
+                        </div>
+                        <h3>Wheelchair-Wide Doors</h3>
+                        <p>Doorways and passageways are extra-wide (minimum 90 cm) to allow smooth wheelchair
+                            navigation, featuring zero thresholds for seamless rolling.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow animate fadeInUp" data-wow-delay="400ms" data-wow-duration="1000ms">
+                    <div class="feature-card">
+                        <div class="icon-wrap">
+                            <i class="bi bi-hand-thumbs-up"></i>
+                        </div>
+                        <h3>Grab Rails & Zero-Entry Showers</h3>
+                        <p>Bathroom walls feature heavy-duty support rails, paired with step-free, zero-entry shower
+                            cubicles for absolute ease of movement.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow animate fadeInUp" data-wow-delay="500ms" data-wow-duration="1000ms">
+                    <div class="feature-card">
+                        <div class="icon-wrap">
+                            <i class="bi bi-lightbulb"></i>
+                        </div>
+                        <h3>Motion-Sensor Lighting</h3>
+                        <p>Smart sensor nightlights illuminate bedroom-to-bathroom passages automatically, helping
+                            prevent midnight disorientation.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow animate fadeInUp" data-wow-delay="600ms" data-wow-duration="1000ms">
+                    <div class="feature-card">
+                        <div class="icon-wrap">
+                            <i class="bi bi-sliders"></i>
+                        </div>
+                        <h3>High-Level Plugs</h3>
+                        <p>Electric points and switches are placed at comfortable chest-heights, ensuring seniors do not
+                            need to bend down to charge devices.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Features Section End --> <!-- Villa Options Section Start -->
+    <div class="villa-options-section">
+        <div class="container">
+            <div class="row justify-content-center mb-80">
+                <div class="col-lg-8 text-center">
+                    <div class="section-title wow animate fadeInDown" data-wow-delay="200ms" data-wow-duration="1200ms">
+                        <span>
+                            <svg width="24" height="6" viewBox="0 0 24 6" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M5.66667 3C5.66667 1.52724 4.47276 0.333333 3 0.333333C1.52724 0.333333 0.333334 1.52724 0.333334 3C0.333334 4.47276 1.52724 5.66667 3 5.66667C4.47276 5.66667 5.66667 4.47276 5.66667 3ZM24 3V2.5L3 2.5V3V3.5L24 3.5V3Z" />
+                            </svg>
+                            Villa Configurations
+                            <svg width="26" height="6" viewBox="0 0 26 6" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M20.3333 3C20.3333 4.47276 21.5272 5.66667 23 5.66667C24.4728 5.66667 25.6667 4.47276 25.6667 3C25.6667 1.52724 24.4728 0.333333 23 0.333333C21.5272 0.333333 20.3333 1.52724 20.3333 3ZM0 3V3.5H23V3V2.5H0V3Z" />
+                            </svg>
+                        </span>
+                        <h2>Our Floor Configurations</h2>
+                        <p>Select the layout that best suits your lifestyle. Each villa is detached, offering private
+                            garden space and peaceful verandahs.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="villa-option-row">
+                <div class="villa-img-col wow animate fadeInLeft" data-wow-delay="200ms" data-wow-duration="1200ms">
+                    <img src="assets/img/the-villas/1bhk.jpg" alt="Interior look of the Orchid Suite">
+                </div>
+                <div class="villa-info-col wow animate fadeInRight" data-wow-delay="300ms" data-wow-duration="1200ms">
+                    <h3>The Orchid Suite (1 BHK)</h3>
+                    <p>Designed for individuals or couples who appreciate a compact, cozy, and extremely easy-to-manage
+                        layout. The Orchid Suite places emphasis on a large master bedroom and connected accessibility
+                        features, keeping everything within arm's reach.</p>
+                    <ul class="spec-pill-list mb-4">
+                        <li>1 Master Bedroom</li>
+                        <li>1 Accessible Bathroom</li>
+                        <li>Private Verandah</li>
+                        <li>Pantry Kitchenette</li>
+                        <li>Total Area: ~750 Sq.Ft.</li>
+                    </ul>
+                    <a href="contact.html" class="primary-btn1 btn-hover">
+                        Schedule a Walkthrough
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="villa-option-row reverse">
+                <div class="villa-img-col wow animate fadeInRight" data-wow-delay="200ms" data-wow-duration="1200ms">
+                    <img src="assets/img/the-villas/2bhk.png" alt="Exterior of Jasmine & Banyan Villas">
+                </div>
+                <div class="villa-info-col wow animate fadeInLeft" data-wow-delay="300ms" data-wow-duration="1200ms">
+                    <h3>The Jasmine &amp; Banyan Villas (2 BHK)</h3>
+                    <p>Our signature independent villas. Offering plenty of space for residents who love hosting
+                        visiting family members, require a second bedroom for a personal study/hobbies room, or prefer a
+                        separate, full-size kitchen layout.</p>
+                    <ul class="spec-pill-list mb-4">
+                        <li>2 Spacious Bedrooms</li>
+                        <li>2 Attached Bathrooms</li>
+                        <li>Guest Powder Room</li>
+                        <li>Full Senior Kitchen</li>
+                        <li>Private Terrace Garden</li>
+                        <li>Total Area: ~1,200 Sq.Ft.</li>
+                    </ul>
+                    <a href="contact.html" class="primary-btn1 btn-hover">
+                        Inquire About Pricing
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Villa Options Section End -->
+
+    <!-- Safety Spec Section Start -->
+    <div class="safety-spec-section">
+        <div class="container">
+            <div class="row gy-5 align-items-center">
+                <div class="col-lg-6 wow animate fadeInLeft" data-wow-delay="200ms" data-wow-duration="1200ms">
+                    <div class="section-title">
+                        <span class="two">
+                            <svg width="24" height="6" viewBox="0 0 24 6" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M5.66667 3C5.66667 1.52724 4.47276 0.333333 3 0.333333C1.52724 0.333333 0.333334 1.52724 0.333334 3C0.333334 4.47276 1.52724 5.66667 3 5.66667C4.47276 5.66667 5.66667 4.47276 5.66667 3ZM24 3V2.5L3 2.5V3V3.5L24 3.5V3Z" />
+                            </svg>
+                            Clinical Grade Safety
+                            <svg width="26" height="6" viewBox="0 0 26 6" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M20.3333 3C20.3333 4.47276 21.5272 5.66667 23 5.66667C24.4728 5.66667 25.6667 4.47276 25.6667 3C25.6667 1.52724 24.4728 0.333333 23 0.333333C21.5272 0.333333 20.3333 1.52724 20.3333 3ZM0 3V3.5H23V3V2.5H0V3Z" />
+                            </svg>
+                        </span>
+                        <h2>Behind the design details.</h2>
+                        <p>We believe safety shouldn't feel institutional. Our interior and architectural specifications
+                            follow rigorous senior-care guidelines while blending seamlessly into the luxurious domestic
+                            environment.</p>
+                    </div>
+                    <ul class="safety-list wow animate fadeInLeft" data-wow-delay="300ms" data-wow-duration="1200ms">
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            <div>
+                                <strong>Decibel-Alert Sirens</strong>
+                                High-output call buzzers emit localized sound outside the villa entrance as well as
+                                alerting the central nursing station.
+                            </div>
+                        </li>
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            <div>
+                                <strong>Slip-Free Thresholds</strong>
+                                Flat transitions between the bedroom, living room, and outdoors minimize tripping
+                                hazards.
+                            </div>
+                        </li>
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            <div>
+                                <strong>Decent-Height Sinks</strong>
+                                Wall-mounted wash basins are height-adjusted to prevent neck strain and accommodate
+                                wheelchair users.
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-6 wow animate fadeInRight" data-wow-delay="400ms" data-wow-duration="1200ms">
+                    <div class="villa-img-col">
+                        <img src="assets/img/the-villas/F1_22 - Photo.jpg"
+                            alt="Paths and exterior spaces at Green Gardens retirement village">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Safety Spec Section End -->
+
+    <!-- Footer Start -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="footer-top">
+                <div class="row gy-5">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="footer-logo-and-title">
+                            <img class="footer-logo" src="assets/img/green-gardens-retirement-villas-kerala-logo.png"
+                                alt="Green Gardens" style="max-width:120px;">
+                            <div class="section-title mt-25">
+                                <p>Blending timeless charm with modern sophistication, we offer more than just a stay ,
+                                    we deliver an unforgettable managed lifestyle experience for seniors.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-sm-6 d-flex justify-content-sm-center">
+                        <div class="contact-wrapper">
+                            <div class="contact-area">
+                                <div class="widget-title">
+                                    <h5>For Reservations</h5>
+                                </div>
+                                <div class="icon-and-contact">
+                                    <div class="icon">
+                                        <svg width="16" height="16" viewBox="0 0 16 16"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <g>
+                                                <path
+                                                    d="M15.0175 11.297C14.991 11.275 11.9965 9.132 11.184 9.2725C10.7935 9.3415 10.57 9.6075 10.1225 10.141C10.0505 10.227 9.877 10.4325 9.743 10.579C9.46016 10.4869 9.18429 10.3746 8.9175 10.243C7.54026 9.5725 6.4275 8.45974 5.757 7.0825C5.62543 6.81571 5.51315 6.53984 5.421 6.257C5.568 6.1225 5.774 5.949 5.862 5.875C6.3925 5.43 6.6585 5.2065 6.7275 4.8155C6.869 4.006 4.725 1.009 4.703 0.982C4.60536 0.843528 4.4782 0.728462 4.33069 0.645108C4.18317 0.561755 4.01899 0.512193 3.85 0.5C2.981 0.5 0.5 3.718 0.5 4.2605C0.5 4.292 0.5455 7.494 4.494 11.5105C8.506 15.4545 11.708 15.5 11.7395 15.5C12.282 15.5 15.5 13.019 15.5 12.15C15.4878 11.9809 15.4382 11.8167 15.3548 11.6692C15.2713 11.5217 15.1561 11.3945 15.0175 11.297Z" />
+                                            </g>
+                                        </svg>
+                                    </div>
+                                    <div class="contact">
+                                        <ul>
+                                            <li><a href="tel:+918921234567">+91 9249551740</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="icon-and-contact">
+                                    <div class="icon">
+                                        <svg width="16" height="16" viewBox="0 0 16 16"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M13.7695 2.66797H2.23047C1.55284 2.66797 1 3.2202 1 3.89844V12.1016C1 12.7775 1.55037 13.332 2.23047 13.332H13.7695C14.4455 13.332 15 12.7817 15 12.1016V3.89844C15 3.2225 14.4496 2.66797 13.7695 2.66797ZM13.5996 3.48828L8.02609 9.06184L2.40435 3.48828H13.5996ZM1.82031 11.9317V4.06439L5.77091 7.98111L1.82031 11.9317ZM2.40036 12.5117L6.35344 8.55863L7.73859 9.93189C7.89894 10.0909 8.15769 10.0903 8.31738 9.93063L9.66797 8.58004L13.5996 12.5117H2.40036ZM14.1797 11.9317L10.248 8L14.1797 4.0683V11.9317Z" />
+                                        </svg>
+                                    </div>
+                                    <div class="contact">
+                                        <ul class="two">
+                                            <li><a
+                                                    href="mailto:greengardens.connect@gmail.com">greengardens.connect@gmail.com</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="social-area">
+                                <h5>Social Media Links</h5>
+                                <ul class="social-list">
+                                    <li class="single-social"><a href="https://www.facebook.com/"><svg width="20"
+                                                height="20" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+                                                <g>
+                                                    <path
+                                                        d="M8.99922 0.450195C-1.60152 0.760695 -2.68242 15.6355 7.65642 17.5502C7.65624 17.5502 7.65624 11.5391 7.65624 11.5391H5.47428V9.0524H7.65642V7.15736C7.71726 3.68768 10.5055 3.56042 12.8264 3.97856V6.09554H11.7426C10.675 6.09554 10.342 6.75866 10.342 7.43888V9.05258H12.7256L12.3445 11.5391H10.342V17.5502C20.6832 15.6337 19.5974 0.759435 8.99922 0.450195Z" />
+                                                </g>
+                                            </svg></a></li>
+                                    <li class="single-social"><a href="https://www.instagram.com/"><svg width="20"
+                                                height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                <g>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                        d="M6.33464 2.6665C4.30959 2.6665 2.66797 4.30812 2.66797 6.33317V13.6665C2.66797 15.6916 4.30959 17.3332 6.33464 17.3332H13.668C15.693 17.3332 17.3346 15.6916 17.3346 13.6665V6.33317C17.3346 4.30812 15.693 2.6665 13.668 2.6665H6.33464ZM10.0013 7.33317C8.52854 7.33317 7.33464 8.52708 7.33464 9.99984C7.33464 11.4726 8.52854 12.6665 10.0013 12.6665C11.474 12.6665 12.668 11.4726 12.668 9.99984C12.668 8.52708 11.474 7.33317 10.0013 7.33317ZM6.0013 9.99984C6.0013 7.7907 7.79216 5.99984 10.0013 5.99984C12.2104 5.99984 14.0013 7.7907 14.0013 9.99984C14.0013 12.209 12.2104 13.9998 10.0013 13.9998C7.79216 13.9998 6.0013 12.209 6.0013 9.99984ZM14.0013 4.6665C13.2649 4.6665 12.668 5.26346 12.668 5.99984C12.668 6.73622 13.2649 7.33317 14.0013 7.33317C14.7377 7.33317 15.3346 6.73622 15.3346 5.99984C15.3346 5.26346 14.7377 4.6665 14.0013 4.6665Z" />
+                                                </g>
+                                            </svg></a></li>
+                                    <li class="single-social"><a href="https://www.youtube.com/"><svg width="20"
+                                                height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M17.2818 6.40997C17.1077 5.76736 16.5972 5.2608 15.9499 5.08777C14.7673 4.7666 10.0367 4.7666 10.0367 4.7666C10.0367 4.7666 5.30627 4.7666 4.12365 5.0756C3.48875 5.24845 2.96585 5.76748 2.7917 6.40997C2.48047 7.58367 2.48047 10.0178 2.48047 10.0178C2.48047 10.0178 2.48047 12.4642 2.7917 13.6256C2.96601 14.2681 3.47631 14.7747 4.12375 14.9477C5.31872 15.269 10.0369 15.269 10.0369 15.269C10.0369 15.269 14.7673 15.269 15.9499 14.96C16.5973 14.787 17.1077 14.2805 17.282 13.638C17.5932 12.4642 17.5931 10.0301 17.5931 10.0301C17.5931 10.0301 17.6056 7.58365 17.2818 6.40997ZM8.53054 12.2665V7.76904L12.4643 10.0178L8.53054 12.2665Z" />
+                                            </svg></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="location-and-payment">
+                            <div class="title-and-location-area">
+                                <div class="widget-title">
+                                    <h5>Address</h5>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <div class="icon">
+                                            <svg width="16" height="16" viewBox="0 0 16 16"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M8 0C4.89838 0 2.375 2.52338 2.375 5.625C2.375 6.67294 2.66528 7.69563 3.21466 8.58288L7.67981 15.7784C7.76534 15.9163 7.91603 16 8.07809 16C8.07934 16 8.08056 16 8.08181 16C8.24528 15.9987 8.39628 15.9124 8.48025 15.7721L12.8316 8.50688C13.3507 7.63838 13.625 6.64184 13.625 5.625C13.625 2.52338 11.1016 0 8 0Z" />
+                                            </svg>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a class="location"
+                                            href="https://maps.google.com/?q=Green+Gardens+Retirement+Villas+Valavoor+Pala+Kerala"
+                                            target="_blank">Green Gardens, 16/13 Kuzhikulam Valavoor, Kottayam, Pala,
+                                            Kerala, India, 686635</a>
+                                        <div class="content"><a class="get-direction"
+                                                href="https://maps.google.com/?q=Green+Gardens+Retirement+Villas+Valavoor+Pala+Kerala"
+                                                target="_blank">Get Direction</a></div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-menu">
+            <div class="container">
+                <div class="footer-menu-wrap">
+                    <ul class="footer-menu-list">
+                        <li class="menu-list"><a href="the-villas.html">Living Spaces</a></li>
+                        <li class="menu-list"><a href="a-day-here.html">Daily Living</a></li>
+                        <li class="menu-list"><a href="story.html">Our Story</a></li>
+                        <li class="menu-list"><a href="gallery.html">Gallery</a></li>
+                        <li class="menu-list"><a href="#">Terms &amp; Conditions</a></li>
+                        <li class="menu-list"><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>©Copyright 2026 <a href="index.html">Green Gardens</a> | Premium Retirement Villas in Kerala</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer End -->
+
+    <!--  Main jQuery  -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/jquery-ui.js"></script>
+    <script src="assets/js/moment.min.js"></script>
+    <script src="assets/js/daterangepicker.min.js"></script>
+    <!-- Popper and Bootstrap JS -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <!-- Swiper slider JS -->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/slick.js"></script>
+    <!-- Waypoints JS -->
+    <script src="assets/js/waypoints.min.js"></script>
+    <!-- Counterup JS -->
+    <script src="assets/js/jquery.counterup.min.js"></script>
+    <!-- Wow JS -->
+    <script src="assets/js/wow.min.js"></script>
+    <!-- Circle -->
+    <script src="assets/js/circletype.min.js"></script>
+    <!-- Nice Select -->
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <!-- Gsap  JS -->
+    <script src="assets/js/gsap.min.js"></script>
+    <script src="assets/js/ScrollTrigger.min.js"></script>
+    <script src="assets/js/jquery.fancybox.min.js"></script>
+    <script src="assets/js/SplitText.min.js"></script>
+    <!-- Custom JS -->
+    <script src="assets/js/custom.js"></script>
+</body>
+
+</html>
